@@ -11,7 +11,7 @@ const routes: Routes = [
     children: [
       { path: 'select', component: SelectBoxComponent },
       { path: 'graficas', component: GraficasComponent },
-      { path: 'select', redirectTo: 'select', pathMatch: 'full' },
+      // { path: 'select', redirectTo: 'select', pathMatch: 'full' },
     ],
   },
 ];

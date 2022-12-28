@@ -2,6 +2,29 @@
   <nb-layout-header fixed> Test </nb-layout-header>
 
   <nb-layout-column>
+    <h1>Angular Router App</h1>
+    <!-- This nav gives you links to click, which tells the router which route to use (defined in the routes constant in  AppRoutingModule) -->
+    <nav>
+      <ul>
+        <li>
+          <a
+            routerLink="/general/select"
+            routerLinkActive="active"
+            ariaCurrentWhenActive="page"
+            >Users Info</a
+          >
+        </li>
+        <li>
+          <a
+            routerLink="/general/graficas"
+            routerLinkActive="active"
+            ariaCurrentWhenActive="page"
+            >Graficas</a
+          >
+        </li>
+      </ul>
+    </nav>
+    <!-- The routed views render in the <router-outlet>-->
     <router-outlet></router-outlet>
   </nb-layout-column>
   <nb-layout-footer fixed> Copyright &copy; 2022 </nb-layout-footer>
