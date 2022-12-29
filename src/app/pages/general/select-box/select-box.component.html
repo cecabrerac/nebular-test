@@ -1,1 +1,14 @@
-<p>select-box works!</p>
+<!-- <p>select-box works!</p> -->
+<h4>Users Information</h4>
+<nb-select>
+  <nb-option *ngFor="let user of appUsers" value="user.id">
+    <button
+      nbTooltip="{{ user.name }}"
+      nbTooltipStatus="primary"
+      nbButton
+      status="primary"
+    >
+      {{ user.username }}
+    </button>
+  </nb-option>
+</nb-select>
