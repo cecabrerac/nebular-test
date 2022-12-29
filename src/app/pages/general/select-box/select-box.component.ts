@@ -9,10 +9,24 @@ import { appUsers } from './appUsers';
 })
 export class SelectBoxComponent implements OnInit {
   appUsers = appUsers;
+  userSelected: {
+    id: number;
+    username: string;
+    name: string;
+    operation: string;
+    gain: string;
+  };
+  public selectedUser = '';
+  onChange(event) {
+    const selectedUser = event;
+    console.log(selectedUser);
+    console.log('selection has changed');
 
-  onOptionsSelected(value: string) {
-    console.log('Selection has change to ' + value);
-    window.alert('Selection has change to ' + value);
+    const userSelected = appUsers.find(
+      (userSelected) => userSelected.id === selectedUser
+    );
+    console.log(userSelected);
+    return userSelected;
   }
 
   constructor() {

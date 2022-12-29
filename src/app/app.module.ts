@@ -16,6 +16,7 @@ import { AppComponent } from './app.component';
 import { GeneralComponent } from './pages/general/general.component';
 import { SelectBoxComponent } from './pages/general/select-box/select-box.component';
 import { GraficasComponent } from './pages/general/graficas/graficas.component';
+import { UserDetailsComponent } from './pages/general/user-details/user-details.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { GraficasComponent } from './pages/general/graficas/graficas.component';
     GeneralComponent,
     SelectBoxComponent,
     GraficasComponent,
+    UserDetailsComponent,
   ],
   imports: [
     BrowserModule,
