@@ -23,7 +23,7 @@ export const appUsers = [
   },
   {
     id: 3,
-    username: 'pMendieta',
+    username: 'pmendieta',
     name: 'Pepita Mendieta',
     operation: '$3,300',
     gain: '$3.50',

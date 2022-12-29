@@ -16,22 +16,31 @@ export class SelectBoxComponent implements OnInit {
     operation: string;
     gain: string;
   };
-  public selectedUser = '';
+  // public selectedUser = '';
+  // onChange(event) {
+  //   const selectedUser = event;
+  //   console.log(selectedUser);
+  //   console.log('selection has changed');
+
+  //   const userSelected = appUsers.find(
+  //     (userSelected) => userSelected.id === selectedUser
+  //   );
+  //   console.log(userSelected);
+  //   return userSelected;
+  // }
+
+  selectedUser = {};
   onChange(event) {
-    const selectedUser = event;
-    console.log(selectedUser);
+    const selectedUserId = event;
+    console.log(selectedUserId);
     console.log('selection has changed');
 
-    const userSelected = appUsers.find(
-      (userSelected) => userSelected.id === selectedUser
-    );
-    console.log(userSelected);
-    return userSelected;
+    this.selectedUser = appUsers.find((u) => u.id === selectedUserId);
+    console.log(this.selectedUser);
+    return this.selectedUser;
   }
 
-  constructor() {
-    console.log(appUsers[0]);
-  }
+  constructor() {}
 
   ngOnInit(): void {}
 }
