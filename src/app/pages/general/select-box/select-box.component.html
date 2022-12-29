@@ -1,14 +1,30 @@
 <!-- <p>select-box works!</p> -->
 <h4>Users Information</h4>
-<nb-select>
-  <nb-option *ngFor="let user of appUsers" value="user.id">
-    <button
-      nbTooltip="{{ user.name }}"
-      nbTooltipStatus="primary"
-      nbButton
-      status="primary"
-    >
-      {{ user.username }}
-    </button>
-  </nb-option>
-</nb-select>
+<label
+  >Select User:
+  <label>
+    <nb-select #mySelect (change)="onOptionsSelected(mySelect.value)">
+      <nb-option selected disabled>Select Username</nb-option>
+
+      <nb-option *ngFor="let user of appUsers" value="user.id">
+        <button
+          nbTooltip="{{ user.name }}"
+          nbTooltipStatus="primary"
+          nbButton
+          status="primary"
+          nbTooltipPlacement="right"
+        >
+          {{ user.username }}
+        </button>
+      </nb-option>
+    </nb-select>
+
+    <nb-layout>
+      <nb-layout-header>User selected: </nb-layout-header>
+      <nb-layout-column class="colored-column-warning"
+        >Operation:
+      </nb-layout-column>
+      <nb-layout-column class="colored-column-danger">Gain: </nb-layout-column>
+    </nb-layout>
+  </label></label
+>

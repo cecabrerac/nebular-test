@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
 
 import { appUsers } from './appUsers';
 
@@ -10,6 +9,11 @@ import { appUsers } from './appUsers';
 })
 export class SelectBoxComponent implements OnInit {
   appUsers = appUsers;
+
+  onOptionsSelected(value: string) {
+    console.log('Selection has change to ' + value);
+    window.alert('Selection has change to ' + value);
+  }
 
   constructor() {
     console.log(appUsers[0]);
