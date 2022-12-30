@@ -37,7 +37,6 @@ export class SelectBoxComponent implements OnInit {
 
     this.selectedUser = appUsers.find((u) => u.id === selectedUserId);
     console.log(this.selectedUser);
-    return this.selectedUser;
   }
 
   constructor() {}

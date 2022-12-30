@@ -6,8 +6,6 @@
   (ngModelChange)="onChange($event)"
   name="deviceText"
 >
-  <nb-option selected disabled>Select Username</nb-option>
-
   <nb-option *ngFor="let user of appUsers" [value]="user.id">
     <button
       nbTooltip="{{ user.name }}"
@@ -21,4 +19,4 @@
   </nb-option>
 </nb-select>
 <hr />
-<app-user-details></app-user-details>
+<app-user-details [userSelected]="selectedUser"></app-user-details>

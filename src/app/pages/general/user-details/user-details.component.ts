@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { SelectBoxComponent } from '../select-box/select-box.component';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-user-details',
@@ -7,9 +6,8 @@ import { SelectBoxComponent } from '../select-box/select-box.component';
   styleUrls: ['./user-details.component.scss'],
 })
 export class UserDetailsComponent implements OnInit {
-  // callingClass = new SelectBoxComponent();
-  // selectedUser = this.callingClass.selectedUser;
-
+  
+@Input() userSelected: any;
   constructor() {}
 
   ngOnInit(): void {}
