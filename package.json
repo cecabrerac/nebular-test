@@ -23,6 +23,8 @@
     "@nebular/eva-icons": "6.2.2",
     "@nebular/theme": "^6.2.2",
     "eva-icons": "^1.1.2",
+    "rimraf": "^3.0.2",
+    "rm": "^0.1.8",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.2"

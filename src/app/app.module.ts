@@ -8,6 +8,10 @@ import {
   NbLayoutModule,
   NbSelectModule,
   NbTooltipModule,
+  NbCardModule,
+  NbSpinnerModule,
+  NbUserModule,
+  NbListModule,
 } from '@nebular/theme';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -37,9 +41,15 @@ import { UserDetailsComponent } from './pages/general/user-details/user-details.
     NbEvaIconsModule,
     NbSelectModule,
     NbTooltipModule,
+    NbCardModule,
+    NbSpinnerModule,
+    NbUserModule,
+    NbListModule,
+    // NgbTooltipModule,
   ],
   exports: [FormsModule, ReactiveFormsModule],
   providers: [],
   bootstrap: [AppComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class AppModule {}

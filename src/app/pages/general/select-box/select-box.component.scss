@@ -1,5 +1,55 @@
 nb-layout-header {
-    display: flex;
-    justify-content: center;
-    justify-items: center;
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+}
+nb-select {
+  padding-left: 12px;
+}
+nb-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: normal;
+  border: none;
+  padding-top: nb-theme(card-header-with-select-padding-top);
+  padding-bottom: nb-theme(card-header-with-select-padding-bottom);
+}
+nb-list {
+  overflow-x: hidden;
+}
+nb-list-item {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin: 0 -0.25rem;
+}
+nb-user,
+nb-select {
+  padding-left: 12px;
+}
+
+.date,
+.visited-pages-count,
+.value {
+  margin-top: 0.25rem;
+  color: nb-theme(color-success-default);
+}
+.infinite-cards {
+  nb-card {
+    &.own-scroll {
+      height: 50vh;
+    }
+  }
+}
+
+.form-inline [fullWidth] {
+  flex: 1;
+}
+
+.form-inline > * {
+  margin: 0 1.5rem 1.5rem 0;
+}
+
+nb-card.inline-form-card nb-card-body {
+  padding-bottom: 0;
 }

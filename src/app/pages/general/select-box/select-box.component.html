@@ -1,6 +1,6 @@
 <!-- <p>select-box works!</p> -->
 <h4>Users Information</h4>
-<label>Select User: </label>
+<!-- <label>Select User: </label>
 <nb-select
   [ngModel]="selectedUser"
   (ngModelChange)="onChange($event)"
@@ -19,4 +19,58 @@
   </nb-option>
 </nb-select>
 <hr />
-<app-user-details [userSelected]="selectedUser"></app-user-details>
+<app-user-details [userSelected]="selectedUser"></app-user-details> -->
+
+<nb-card
+  class="own-scroll"
+  size="medium"
+  accent="success"
+  [nbSpinner]="loading"
+  nbSpinnerStatus="success"
+  nbSpinnerSize="large"
+>
+  <nb-card-header>
+    <span>Search user</span>
+    <nb-select
+      [selected]="type"
+      placeholder="Select user"
+      (selectedChange)="getUser($event); type = $event"
+    >
+      <nb-option
+        placement="right"
+        *ngFor="let user of appUsers"
+        value="{{ user.username }}"
+        [attr.title]="user.name"
+        >{{ user.username }}
+      </nb-option>
+    </nb-select>
+    <nb-user *ngIf="this.nameUser" [name]="nameUser" [title]="nameEmail">
+    </nb-user>
+  </nb-card-header>
+  <nb-list
+    nbInfiniteList
+    [threshold]="500"
+    class="user-activity-list"
+    *ngIf="this.selectedUser"
+  >
+    <nb-list-item *ngFor="let item of selectedUser">
+      <div class="date">
+        {{ item.modelo }}
+      </div>
+      <div class="visited-pages-count">
+        <div class="caption">Marca</div>
+        <div class="value">{{ item.marca }}</div>
+      </div>
+
+      <div class="visited-pages-count">
+        <div class="caption">Color</div>
+        <div class="value">{{ item.color }}</div>
+      </div>
+
+      <div class="visited-pages-count">
+        <div class="caption">Otra info</div>
+        <div class="value">{{ item.marca }}</div>
+      </div>
+    </nb-list-item>
+  </nb-list>
+</nb-card>

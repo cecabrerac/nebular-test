@@ -4,6 +4,8 @@ export interface AppUsers {
   name: string;
   operation: string;
   gain: string;
+  email: string;
+  carros: [];
 }
 
 export const appUsers = [
@@ -13,6 +15,19 @@ export const appUsers = [
     name: 'Juan Pérez',
     operation: '$1,100',
     gain: '$1.50',
+    email: 'jperez@gmail.com',
+    carros: [
+      {
+        marca: 'Ferrari',
+        modelo: 1234,
+        color: 'negro',
+      },
+      {
+        marca: 'TEST',
+        modelo: 1234,
+        color: 'negro',
+      },
+    ],
   },
   {
     id: 2,
@@ -20,6 +35,14 @@ export const appUsers = [
     name: 'William Castiblanco',
     operation: '$2,200',
     gain: '$2.50',
+    email: 'wcastiblancoz@gmail.com',
+    carros: [
+      {
+        marca: 'Toyota',
+        modelo: 1994,
+        color: 'negro',
+      },
+    ],
   },
   {
     id: 3,
@@ -27,5 +50,23 @@ export const appUsers = [
     name: 'Pepita Mendieta',
     operation: '$3,300',
     gain: '$3.50',
+    email: 'pmendietaz@gmail.com',
+    carros: [
+      {
+        marca: 'Ford',
+        modelo: 1954,
+        color: 'negro',
+      },
+      {
+        marca: 'Toyota',
+        modelo: 1994,
+        color: 'azul',
+      },
+      {
+        marca: 'TEST',
+        modelo: 1998,
+        color: 'amarillo',
+      },
+    ],
   },
 ];

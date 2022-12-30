@@ -15,31 +15,49 @@ export class SelectBoxComponent implements OnInit {
     name: string;
     operation: string;
     gain: string;
+    email: string;
+    carros: [];
   };
   // public selectedUser = '';
   // onChange(event) {
   //   const selectedUser = event;
-  //   console.log(selectedUser);
-  //   console.log('selection has changed');
-
   //   const userSelected = appUsers.find(
   //     (userSelected) => userSelected.id === selectedUser
   //   );
-  //   console.log(userSelected);
-  //   return userSelected;
   // }
 
-  selectedUser = {};
+  selectedUser;
+  type;
+  nameUser;
+  nameEmail;
+
   onChange(event) {
     const selectedUserId = event;
-    console.log(selectedUserId);
-    console.log('selection has changed');
-
     this.selectedUser = appUsers.find((u) => u.id === selectedUserId);
-    console.log(this.selectedUser);
   }
+
+  loading = true;
 
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.loading = false;
+  }
+
+  getUser(event) {
+    const selectedUserId = event;
+    console.log(selectedUserId);
+    this.findElement(selectedUserId);
+  }
+  findElement(username) {
+    for (let i = 0; i < this.appUsers.length; i++) {
+      const element = this.appUsers[i].username;
+      console.log(element);
+      if (element === username) {
+        this.nameUser = this.appUsers[i].name;
+        this.nameEmail = this.appUsers[i].email;
+        this.selectedUser = this.appUsers[i].carros;
+      }
+    }
+  }
 }
