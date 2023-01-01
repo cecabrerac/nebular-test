@@ -45,14 +45,13 @@ export class SelectBoxComponent implements OnInit {
   }
 
   getUser(event) {
-    const selectedUserId = event;
-    console.log(selectedUserId);
-    this.findElement(selectedUserId);
+    const selectedUsername = event;
+    console.log(selectedUsername);
+    this.findElement(selectedUsername);
   }
   findElement(username) {
     for (let i = 0; i < this.appUsers.length; i++) {
       const element = this.appUsers[i].username;
-      console.log(element);
       if (element === username) {
         this.nameUser = this.appUsers[i].name;
         this.nameEmail = this.appUsers[i].email;

@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { GeneralComponent } from './general.component';
 import { GraficasComponent } from './graficas/graficas.component';
 import { SelectBoxComponent } from './select-box/select-box.component';
+import { UnsuscribeComponent } from './unsuscribe/unsuscribe.component';
 
 const routes: Routes = [
   {
@@ -11,6 +12,7 @@ const routes: Routes = [
     children: [
       { path: 'select', component: SelectBoxComponent },
       { path: 'graficas', component: GraficasComponent },
+      { path: 'unsuscribe', component: UnsuscribeComponent },
       // { path: 'select', redirectTo: 'select', pathMatch: 'full' },
     ],
   },

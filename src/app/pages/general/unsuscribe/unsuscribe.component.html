@@ -1,0 +1,79 @@
+<h4>Retirarse</h4>
+<nb-card
+  class="own-scroll"
+  size="medium"
+  accent="success"
+  [nbSpinner]="loading"
+  nbSpinnerStatus="success"
+  nbSpinnerSize="large"
+>
+  <nb-card-header
+    ><h6>
+      Ayudanos a mejorar: por favor responde esta breve encuesta y dejanos tu
+      comentario acerca de nuestros servicios.
+    </h6></nb-card-header
+  >
+  <nb-card-body>
+    <nb-card>
+      <nb-card-body>
+        <p>Cuán satisfecho se encuentra de la empresa en general?</p>
+        <nb-radio-group [(ngModel)]="ngModelValue1" name="ng-model-group1">
+          <nb-radio value="1">Muy satisfecho</nb-radio>
+          <nb-radio value="2">Satisfecho</nb-radio>
+          <nb-radio value="3">Poco satisfecho</nb-radio>
+          <nb-radio value="4">Nada satisfecho</nb-radio>
+        </nb-radio-group>
+      </nb-card-body>
+    </nb-card>
+    <nb-card>
+      <nb-card-body>
+        <p>Cuán probable es que recomiende nuestros productos o servicios?</p>
+        <nb-radio-group [(ngModel)]="ngModelValue2" name="ng-model-group2">
+          <nb-radio value="1">Muy probable</nb-radio>
+          <nb-radio value="2">Probable</nb-radio>
+          <nb-radio value="3">Poco probable</nb-radio>
+          <nb-radio value="4">Nada probable</nb-radio>
+        </nb-radio-group>
+      </nb-card-body>
+    </nb-card>
+    <nb-card>
+      <nb-card-body>
+        <p>Como calificaría la calidad de la atención recibida?</p>
+        <nb-radio-group [(ngModel)]="ngModelValue3" name="ng-model-group3">
+          <nb-radio value="1">Muy buena</nb-radio>
+          <nb-radio value="2">Buena</nb-radio>
+          <nb-radio value="3">Regular</nb-radio>
+          <nb-radio value="4">Mala</nb-radio>
+        </nb-radio-group>
+      </nb-card-body>
+    </nb-card>
+
+    <nb-card>
+      <p>Si lo deseas déjanos un comentario adicional?</p>
+      <textarea
+        nbInput
+        fullWidth
+        placeholder="Escribe aquí tu comentario"
+        [(ngModel)]="textareaItemNgModel"
+      ></textarea>
+    </nb-card>
+
+    <h6>Esperamos que regreses pronto!</h6>
+    <button nbButton (click)="goToPage('general')">
+      <span>Salir</span>
+    </button>
+  </nb-card-body>
+</nb-card>
+
+<!-- LA SIGUIENTE SECCION SE CREA TEMPORALMENTE EN DESARROLLO PARA VERIFICAR LA RECOLECCION DE DATOS. -->
+
+<section class="dataColected">
+  <p>Prueba de Información recolectada:</p>
+  <p>Pregunta 1, Opción Seleccionada: {{ ngModelValue1 }}</p>
+  <p>Pregunta 2, Opción Seleccionada: {{ ngModelValue2 }}</p>
+  <p>Pregunta 3, Opción Seleccionada: {{ ngModelValue3 }}</p>
+  <p>
+    Comentario:
+    {{ textareaItemNgModel }}
+  </p>
+</section>

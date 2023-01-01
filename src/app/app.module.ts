@@ -12,6 +12,10 @@ import {
   NbSpinnerModule,
   NbUserModule,
   NbListModule,
+  NbCheckboxModule,
+  NbInputModule,
+  NbRadioModule,
+  NbButtonModule,
 } from '@nebular/theme';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -45,6 +49,10 @@ import { UserDetailsComponent } from './pages/general/user-details/user-details.
     NbSpinnerModule,
     NbUserModule,
     NbListModule,
+    NbCheckboxModule,
+    NbInputModule,
+    NbRadioModule,
+    NbButtonModule,
     // NgbTooltipModule,
   ],
   exports: [FormsModule, ReactiveFormsModule],

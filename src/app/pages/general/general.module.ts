@@ -2,16 +2,32 @@ import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { GeneralRoutingModule } from './general-routing.module';
-import { NbCardModule, NbSpinnerModule, NbUserModule } from '@nebular/theme';
+import {
+  NbButtonModule,
+  NbCardModule,
+  NbCheckboxModule,
+  NbInputModule,
+  NbSpinnerModule,
+  NbUserModule,
+  NbRadioModule,
+} from '@nebular/theme';
+import { UnsuscribeComponent } from './unsuscribe/unsuscribe.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [],
+  declarations: [UnsuscribeComponent],
   imports: [
     CommonModule,
     GeneralRoutingModule,
     NbCardModule,
     NbSpinnerModule,
     NbUserModule,
+    NbCheckboxModule,
+    NbInputModule,
+    FormsModule,
+    NbButtonModule,
+    NbRadioModule,
+    NbButtonModule,
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
