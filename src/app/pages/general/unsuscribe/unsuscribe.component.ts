@@ -11,19 +11,41 @@ import { Router } from '@angular/router';
 })
 export class UnsuscribeComponent implements OnInit {
   loading = true;
+  stringifiedData: any;
 
-  ngModelValue1 = '1';
-  ngModelValue2 = '1';
-  ngModelValue3 = '1';
+  appUser = 'jperez'; //Aqui va el nombre de usuario correspondiente
+  ngModelValue1 = '0';
+  ngModelValue2 = '0';
+  ngModelValue3 = '0';
   textareaItemNgModel = '';
 
-  constructor(private router: Router) {}
+  username = 'appUser';
+  pregunta1 = 0;
+  pregunta2 = 0;
+  pregunta3 = 0;
+  comentario = '';
 
+  constructor() {}
   ngOnInit(): void {
     this.loading = false;
   }
 
-  goToPage(pageName: string) {
-    this.router.navigate([`${pageName}`]);
+  // Object Data
+  formData: any;
+
+  guardarSalir() {
+    this.formData = {
+      username: this.appUser,
+      pregunta1: this.ngModelValue1,
+      pregunta2: this.ngModelValue2,
+      pregunta3: this.ngModelValue3,
+      comentario: this.textareaItemNgModel,
+    };
+    this.stringifiedData = JSON.stringify(this.formData);
+    window.alert(
+      'Prueba de desarrollo: datos a enviar en formato JSON: \n ' +
+        this.stringifiedData
+    );
+    console.log('With Stringify :', this.stringifiedData);
   }
 }
