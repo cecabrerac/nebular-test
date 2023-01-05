@@ -10,6 +10,7 @@ import {
   NbSpinnerModule,
   NbUserModule,
   NbRadioModule,
+  NbAlertModule,
 } from '@nebular/theme';
 import { UnsuscribeComponent } from './unsuscribe/unsuscribe.component';
 import { FormsModule } from '@angular/forms';
@@ -28,6 +29,7 @@ import { FormsModule } from '@angular/forms';
     NbButtonModule,
     NbRadioModule,
     NbButtonModule,
+    NbAlertModule,
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })

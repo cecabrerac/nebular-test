@@ -13,7 +13,14 @@ nb-card-header h6 {
   font-size: 0.9rem;
 }
 
-.pedircomentario {
+.alert {
+  color: rgb(255, 60, 60);
   margin-left: 1.6rem;
-  margin-top: 1rem;
+}
+
+.btnDespedida {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-items: center;
 }

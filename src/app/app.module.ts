@@ -16,6 +16,7 @@ import {
   NbInputModule,
   NbRadioModule,
   NbButtonModule,
+  NbAlertModule,
 } from '@nebular/theme';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -53,6 +54,7 @@ import { UserDetailsComponent } from './pages/general/user-details/user-details.
     NbInputModule,
     NbRadioModule,
     NbButtonModule,
+    NbAlertModule,
     // NgbTooltipModule,
   ],
   exports: [FormsModule, ReactiveFormsModule],
