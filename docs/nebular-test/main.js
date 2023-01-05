@@ -321,6 +321,7 @@ AppModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjector
             _nebular_theme__WEBPACK_IMPORTED_MODULE_4__["NbInputModule"],
             _nebular_theme__WEBPACK_IMPORTED_MODULE_4__["NbRadioModule"],
             _nebular_theme__WEBPACK_IMPORTED_MODULE_4__["NbButtonModule"],
+            _nebular_theme__WEBPACK_IMPORTED_MODULE_4__["NbAlertModule"],
         ], _angular_forms__WEBPACK_IMPORTED_MODULE_6__["FormsModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_6__["ReactiveFormsModule"]] });
 (function () { (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵsetNgModuleScope"](AppModule, { declarations: [_app_component__WEBPACK_IMPORTED_MODULE_7__["AppComponent"],
         _pages_general_general_component__WEBPACK_IMPORTED_MODULE_8__["GeneralComponent"],
@@ -341,7 +342,8 @@ AppModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjector
         _nebular_theme__WEBPACK_IMPORTED_MODULE_4__["NbCheckboxModule"],
         _nebular_theme__WEBPACK_IMPORTED_MODULE_4__["NbInputModule"],
         _nebular_theme__WEBPACK_IMPORTED_MODULE_4__["NbRadioModule"],
-        _nebular_theme__WEBPACK_IMPORTED_MODULE_4__["NbButtonModule"]], exports: [_angular_forms__WEBPACK_IMPORTED_MODULE_6__["FormsModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_6__["ReactiveFormsModule"]] }); })();
+        _nebular_theme__WEBPACK_IMPORTED_MODULE_4__["NbButtonModule"],
+        _nebular_theme__WEBPACK_IMPORTED_MODULE_4__["NbAlertModule"]], exports: [_angular_forms__WEBPACK_IMPORTED_MODULE_6__["FormsModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_6__["ReactiveFormsModule"]] }); })();
 /*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵsetClassMetadata"](AppModule, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"],
         args: [{
@@ -371,6 +373,7 @@ AppModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjector
                     _nebular_theme__WEBPACK_IMPORTED_MODULE_4__["NbInputModule"],
                     _nebular_theme__WEBPACK_IMPORTED_MODULE_4__["NbRadioModule"],
                     _nebular_theme__WEBPACK_IMPORTED_MODULE_4__["NbButtonModule"],
+                    _nebular_theme__WEBPACK_IMPORTED_MODULE_4__["NbAlertModule"],
                 ],
                 exports: [_angular_forms__WEBPACK_IMPORTED_MODULE_6__["FormsModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_6__["ReactiveFormsModule"]],
                 providers: [],
