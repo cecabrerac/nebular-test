@@ -13,19 +13,20 @@ import {
   NbAlertModule,
 } from '@nebular/theme';
 import { UnsuscribeComponent } from './unsuscribe/unsuscribe.component';
-import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [UnsuscribeComponent],
   imports: [
     CommonModule,
     GeneralRoutingModule,
+    ReactiveFormsModule,
+    FormsModule,
     NbCardModule,
     NbSpinnerModule,
     NbUserModule,
     NbCheckboxModule,
     NbInputModule,
-    FormsModule,
     NbButtonModule,
     NbRadioModule,
     NbButtonModule,

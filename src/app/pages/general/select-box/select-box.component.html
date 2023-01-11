@@ -1,57 +1,18 @@
 <h4>Users Information</h4>
-<!-- <label>Select User: </label>
-<nb-select
-  [ngModel]="selectedUser"
-  (ngModelChange)="onChange($event)"
-  name="deviceText"
->
-  <nb-option *ngFor="let user of appUsers" [value]="user.id">
-    <button
-      nbTooltip="{{ user.name }}"
-      nbTooltipStatus="primary"
-      nbButton
-      status="primary"
-      nbTooltipPlacement="right"
-    >
-      {{ user.username }}
-    </button>
-  </nb-option>
-</nb-select>
-<hr />
-<app-user-details [userSelected]="selectedUser"></app-user-details> -->
 
-<nb-card
-  class="own-scroll"
-  size="medium"
-  accent="success"
-  [nbSpinner]="loading"
-  nbSpinnerStatus="success"
-  nbSpinnerSize="large"
->
+<nb-card class="own-scroll" size="medium" accent="success" [nbSpinner]="loading" nbSpinnerStatus="success"
+  nbSpinnerSize="large">
   <nb-card-header>
     <span>Search user</span>
-    <nb-select
-      [selected]="type"
-      placeholder="Select user"
-      (selectedChange)="getUser($event); type = $event"
-    >
-      <nb-option
-        placement="right"
-        *ngFor="let user of appUsers"
-        value="{{ user.username }}"
-        [attr.title]="user.name"
-        >{{ user.username }}
+    <nb-select [selected]="type" placeholder="Select user" (selectedChange)="getUser($event); type = $event">
+      <nb-option placement="right" *ngFor="let user of appUsers" value="{{ user.username }}" [attr.title]="user.name">{{
+        user.username }}
       </nb-option>
     </nb-select>
     <nb-user *ngIf="this.nameUser" [name]="nameUser" [title]="nameEmail">
     </nb-user>
   </nb-card-header>
-  <nb-list
-    nbInfiniteList
-    [threshold]="500"
-    class="user-activity-list"
-    *ngIf="this.selectedUser"
-  >
+  <nb-list nbInfiniteList [threshold]="500" class="user-activity-list" *ngIf="this.selectedUser">
     <nb-list-item *ngFor="let item of selectedUser">
       <div class="date">
         {{ item.modelo }}
