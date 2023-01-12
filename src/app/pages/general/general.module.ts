@@ -11,12 +11,15 @@ import {
   NbUserModule,
   NbRadioModule,
   NbAlertModule,
+  NbDialogModule,
+  // NbDialogService,
 } from '@nebular/theme';
 import { UnsuscribeComponent } from './unsuscribe/unsuscribe.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { PaymentComponent } from './payment/payment.component';
 
 @NgModule({
-  declarations: [UnsuscribeComponent],
+  declarations: [UnsuscribeComponent, PaymentComponent],
   imports: [
     CommonModule,
     GeneralRoutingModule,
@@ -31,6 +34,7 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
     NbRadioModule,
     NbButtonModule,
     NbAlertModule,
+    NbDialogModule.forRoot(),
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
