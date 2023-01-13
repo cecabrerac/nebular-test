@@ -23,6 +23,7 @@
     "@ionic/cli": "^6.20.6",
     "@nebular/eva-icons": "6.2.2",
     "@nebular/theme": "^6.2.2",
+    "bootstrap": "^3.4.1",
     "eva-icons": "^1.1.2",
     "jquery": "^3.6.3",
     "rimraf": "^3.0.2",
