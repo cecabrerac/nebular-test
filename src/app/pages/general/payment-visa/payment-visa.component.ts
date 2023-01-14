@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { NbDialogRef } from '@nebular/theme';
-import * as $ from 'jquery';
 
 @Component({
   selector: 'app-payment-visa',
@@ -18,11 +17,5 @@ export class PaymentVisaComponent implements OnInit {
     this.ref.close(name);
   }
 
-  ngOnInit(): void {
-    this.codePen();
-  }
-
-  codePen() {
-    //the JavaScript CodePen code goes here
-  }
+  ngOnInit(): void {}
 }

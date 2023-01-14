@@ -5,255 +5,191 @@
   font-family: "Nunito", sans-serif;
 }
 
-html {
-  box-sizing: border-box;
-  //   font-size: 25%;
-  overflow-y: scroll;
-  //   background: var(--greyLight-1);
-  font-family: "Nunito", sans-serif;
-  letter-spacing: 0.03rem;
-}
-
 .container {
-  width: fit-content;
-  height: fit-content;
-  border-radius: 10px;
   background-color: rgb(62, 58, 107);
-  min-height: 80vh;
+  border-radius: 10px;
+  box-shadow: inset -2px 2px 2px white;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 2rem;
-  padding: 1rem;
+  margin: 0;
+}
+
+.form-title {
+  font-size: 26px;
+  font-weight: 600;
+  text-align: center;
+  padding-bottom: 6px;
+  color: white;
+  text-shadow: 2px 2px 2px black;
+  border-bottom: solid 1px white;
+}
+
+.visaCard-and-form {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 12px;
+  gap: 12px;
+}
+
+.dots-and-card {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
 }
 
 .card {
-  width: 22rem;
-  height: 12rem;
+  width: 320px;
+  height: 180px;
   border-radius: 1rem;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: space-evenly;
   color: #ffffff;
   background: linear-gradient(to bottom, #17c9ff 0%, #655dff 50%);
   box-shadow: -0.6rem 0.6rem 1.8rem #4f46f83d;
   border: 1px solid #ffffff;
-  //   z-index: 200;
-  //   position: relative;
+  padding: 12px;
 }
 
-.card__visa {
+.card-logo {
   display: flex;
   justify-content: right;
   justify-self: flex-end;
-  width: 20rem;
   height: auto;
-  font-size: 1rem;
 }
 
-.card__visa img {
+.card-logo img {
   width: 20%;
   height: auto;
 }
 
-.card__number {
+.card-number {
   font-family: "Roboto Mono", monospace;
-  font-size: 1.8rem;
+  font-size: 1.2rem;
   letter-spacing: 0.12rem;
 }
 
-.row3 {
+.cardName-cardExp {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
-  gap: 2rem;
 }
 
-.card__name {
+.card-name {
+  width: 50%;
   display: flex;
   flex-direction: column;
 }
 
-.card__name h3 {
-  font-size: 0.9rem;
+.card-name h3 {
+  font-size: 0.7rem;
   text-transform: uppercase;
-  margin-bottom: 0.4rem;
-  font-weight: 1;
 }
-.card__name p {
-  font-size: 1.2rem;
+.card-name p {
+  font-size: 1rem;
 }
 
-.card__expiry {
-  grid-row: 3 / 4;
-  justify-self: flex-end;
+.card-expiry {
+  width: 50%;
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
-}
-.card__expiry h3 {
-  font-size: 0.9rem;
-  text-transform: uppercase;
-  margin-bottom: 0.4rem;
-  font-weight: 300;
-}
-.card__expiry p {
-  font-size: 1.2rem;
 }
 
-.dataEntry {
+.card-expiry h3 {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  text-align: right;
+}
+
+.card-expiry p {
+  font-size: 1rem;
+  text-align: right;
+}
+
+// ESTILOS PARA LA PARTE DEL FORMULARIO:
+
+.form-data {
   display: flex;
   flex-direction: column;
   gap: 1rem;
 }
 
-.form__detail {
+.form-detail {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  // gap: 0.5rem;
 }
 
-.form {
-  grid-column: 1 / 1;
-  display: grid;
-  grid-template-columns: repeat(1, 18rem);
-  grid-template-rows: repeat(5, min-content);
-  grid-column-gap: 2.8rem;
-  grid-row-gap: 1rem;
-  color: black;
+.form-exp-and-cvv {
+  width: auto;
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
 }
 
 .buttons {
+  margin-top: 24px;
   display: flex;
   justify-content: space-evenly;
   gap: 2rem;
 }
 
-//   h2 {
-//     font-size: 2rem;
-//     grid-column: 1 / 3;
-//     line-height: 1;
-//     margin-bottom: 1.4rem;
-//     font-family: "Inter", sans-serif;
-//   }
+.cancel {
+  padding: 6px 12px;
+  border-radius: 6px;
+  background-color: rgb(92, 9, 9);
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+.cancel:hover {
+  background-color: rgb(145, 78, 78);
+}
 
-//   &__detail {
-//     display: flex;
-//     flex-direction: column;
-//     position: relative;
-//     justify-content: center;
-//     padding-bottom: 0.2rem;
-//     color: var(--greyDark-1);
-//   }
+.submit {
+  padding: 6px 12px;
+  border-radius: 6px;
+  background-color: darkgreen;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+.submit:hover {
+  background-color: rgb(3, 150, 3);
+}
 
-//   &__name {
-//     grid-column: 1 / 3;
-//     grid-row: 2 / 3;
-//     justify-self: stretch;
-//   }
-//   &__number {
-//     grid-column: 1 / 3;
-//     grid-row: 3 / 4;
-//     justify-self: stretch;
-//   }
-//   &__expiry {
-//     grid-column: 1 / 2;
-//     grid-row: 4 / 5;
-//   }
-//   &__cvv {
-//     grid-column: 2 / 3;
-//     grid-row: 4 / 5;
-//     justify-self: flex-end;
-//     width: 100%;
-//     input[type="checkbox"] {
-//       display: none;
-//     }
+input {
+  padding: 6px;
+}
 
-//     .info {
-//       top: -0.4rem;
-//       left: 2.4rem;
-//       color: var(--greyDark-1);
-//     }
-//   }
-//   &__btn {
-//     grid-column: 1 / 3;
-//     grid-row: 5 / 6;
-//     height: 3.8rem;
-//     border-radius: 0.6rem;
-//     border: none;
-//     background: var(--primary);
-//     color: #ffffff;
-//     justify-self: stretch;
-//     font-family: inherit;
-//     font-size: 1.6rem;
-//     cursor: pointer;
-//     &:focus {
-//       outline: none;
-//     }
-//     &:hover {
-//       background: var(--primary-dark);
-//     }
-//   }
+label {
+  font-size: 20px;
+  text-shadow: 2px 2px 2px rgb(19, 7, 59);
+}
 
-//   ion-icon {
-//     position: absolute;
-//     font-size: 2rem;
-//     top: 3.4rem;
-//     margin-left: 1rem;
-//     color: var(--primary-light);
-//     stroke: var(--primary);
-//   }
+.alert {
+  color: red;
+  text-shadow: 2px 2px 2px black;
+}
 
-//   label {
-//     pointer-events: none;
-//     font-size: 1.4rem;
-//     padding: 0 0 1rem 0;
-//     line-height: 1;
-//     color: var(--greyDark-1);
-//   }
+@media (max-width: 600px) {
+  .container {
+    min-width: 280px;
+  }
 
-//   input {
-//     padding: 1rem 1rem 1rem 4rem;
-//     border: none;
-//     background: transparent;
-//     border-radius: 0.6rem;
-//     border: 1px solid var(--greyLight-2);
-//     color: var(--greyDark-2);
-//     font-family: inherit;
-//     font-size: 1.4rem;
+  .visaCard-and-form {
+    display: flex;
+    flex-direction: column;
+  }
 
-//     &::placeholder {
-//       color: var(--greyLight-1);
-//       font-size: inherit;
-//       letter-spacing: 0.12rem;
-//     }
-//     &:focus {
-//       outline: none;
-//     }
-//     &:hover {
-//       border: 1px solid var(--primary-light);
-//     }
-//   }
-// }
+  .visaCard-and-form {
+    overflow: hidden;
+    overflow-y: scroll;
+  }
 
-// .alert {
-//   font-family: "Inter", sans-serif;
-//   font-size: 1.2rem;
-//   color: var(--alert);
-//   margin-top: 0.6rem;
-//   display: flex;
-//   align-items: center;
-//   opacity: 0;
-//   svg {
-//     margin-right: 0.4rem;
-//   }
-// }
-
-// .dribbble {
-//   position: fixed;
-//   font-size: 36px;
-//   right: 20px;
-//   bottom: 20px;
-//   color: #ea4c89;
-// }
+  .form-data::-webkit-scrollbar {
+    width: 0;
+  }
+}
