@@ -7,14 +7,14 @@ import { NbDialogRef } from '@nebular/theme';
   styleUrls: ['./payment-visa.component.scss'],
 })
 export class PaymentVisaComponent implements OnInit {
-  constructor(protected ref: NbDialogRef<PaymentVisaComponent>) {}
+  // constructor(protected ref: NbDialogRef<PaymentVisaComponent>) {}
 
   cancel() {
-    this.ref.close();
+    // this.ref.close();
   }
 
   submit(name) {
-    this.ref.close(name);
+    // this.ref.close(name);
   }
 
   ngOnInit(): void {}

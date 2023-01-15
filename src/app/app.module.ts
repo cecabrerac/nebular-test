@@ -28,6 +28,7 @@ import { GeneralComponent } from './pages/general/general.component';
 import { SelectBoxComponent } from './pages/general/select-box/select-box.component';
 import { GraficasComponent } from './pages/general/graficas/graficas.component';
 import { UserDetailsComponent } from './pages/general/user-details/user-details.component';
+import { PaymentVisaComponent } from './pages/general/payment-visa/payment-visa.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { UserDetailsComponent } from './pages/general/user-details/user-details.
     SelectBoxComponent,
     GraficasComponent,
     UserDetailsComponent,
+    PaymentVisaComponent,
   ],
   imports: [
     BrowserModule,
