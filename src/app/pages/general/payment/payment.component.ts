@@ -10,13 +10,11 @@ import { PaymentVisaComponent } from '../payment-visa/payment-visa.component';
 export class PaymentComponent {
   names: string[] = [];
 
-  constructor(private dialogService: NbDialogService) {
-    hasScroll: true;
-  }
+  constructor(private dialogService: NbDialogService) {}
 
-  openVisa() {
+  openVisa(hasScroll: boolean) {
     this.dialogService
-      .open(PaymentVisaComponent)
+      .open(PaymentVisaComponent, { hasScroll })
       .onClose.subscribe((name) => name && this.names.push(name));
   }
 }

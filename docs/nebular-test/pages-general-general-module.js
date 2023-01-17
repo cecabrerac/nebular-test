@@ -266,11 +266,10 @@ class PaymentComponent {
     constructor(dialogService) {
         this.dialogService = dialogService;
         this.names = [];
-        hasScroll: true;
     }
-    openVisa() {
+    openVisa(hasScroll) {
         this.dialogService
-            .open(_payment_visa_payment_visa_component__WEBPACK_IMPORTED_MODULE_1__["PaymentVisaComponent"])
+            .open(_payment_visa_payment_visa_component__WEBPACK_IMPORTED_MODULE_1__["PaymentVisaComponent"], { hasScroll })
             .onClose.subscribe((name) => name && this.names.push(name));
     }
 }
@@ -282,7 +281,7 @@ PaymentComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineC
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "nb-card-body", 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "button", 2);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function PaymentComponent_Template_button_click_4_listener() { return ctx.openVisa(); });
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function PaymentComponent_Template_button_click_4_listener() { return ctx.openVisa(true); });
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](5, "Visa Data");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](6, "br");

@@ -6,13 +6,18 @@
 }
 
 .container {
-  width: 688px;
+  // width: 688px;
+  width: 100%;
+  top: 0;
+  left: 0;
+  // max-height: 100%;
+  // overflow-y: auto;
   background-color: rgb(62, 58, 107);
   border-radius: 10px;
   box-shadow: inset -2px 2px 2px white;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  // justify-content: center;
   align-items: center;
   margin: 0;
 }
@@ -182,12 +187,15 @@ label {
 
 @media screen and (max-width: 768px) {
   .container {
-    width: 348px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 350px;
+    height: 100%;
+    overflow: auto;
   }
-
   .visaCard-and-form {
     display: flex;
     flex-direction: column;
-    overflow: hidden;
   }
 }

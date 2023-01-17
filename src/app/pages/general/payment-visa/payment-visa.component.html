@@ -72,20 +72,21 @@
         </div>
         <div class="form-data">
             <form>
+                <br>
                 <h6>Payment Details</h6>
                 <hr>
                 <br>
                 <div class="form-name form-detail">
-                    <label for="name">Cardholder Name</label>
-                    <input #cardHolderName type="text" placeholder="Mrs Kate Smith" id="name" maxlength="24">
+                    <nb-label for="name">Cardholder Name</nb-label>
+                    <input nbInput #cardHolderName type="text" placeholder="Mrs Kate Smith" id="name" maxlength="24">
                     <div class="alert" id="alert-1">
                         Full name required
                     </div>
                 </div>
                 <br>
                 <div class="form-number form-detail">
-                    <label for="number">Card Number</label>
-                    <input #cardNumber type="text" placeholder="0000 0000 0000 0000" id="number"
+                    <nb-label for="number">Card Number</nb-label>
+                    <input nbInput #cardNumber type="text" placeholder="0000 0000 0000 0000" id="number"
                         onkeypress="return isNumeric(event)">
                     <div class="alert" id="alert-2">
                         Invalid card number
@@ -94,17 +95,18 @@
                 <br>
                 <div class="form-exp-and-cvv">
                     <div class="form-exp form-detail">
-                        <label for="date">Exp Date</label>
-                        <input #expDate type="text" placeholder="MM/YY" id="date" onkeypress="return isNumeric(event)">
+                        <nb-label for="date">Exp Date</nb-label>
+                        <input nbInput #expDate type="text" placeholder="MM/YY" id="date"
+                            onkeypress="return isNumeric(event)">
                         <div class="alert" id="alert-3">
                             Invalid date
                         </div>
                     </div>
 
                     <div class="form-cvv form-detail">
-                        <label for="cvv">CVV
-                        </label>
-                        <input #cvv type="password" placeholder="0000" id="cvv" maxlength="4"
+                        <nb-label for="cvv">CVV
+                        </nb-label>
+                        <input nbInput #cvv type="password" placeholder="0000" id="cvv" maxlength="4"
                             onkeypress="return isNumeric(event)">
                         <div class="alert" id="alert-4">
                             Invalid CVV
@@ -114,8 +116,9 @@
 
                 <footer>
                     <div class="buttons">
-                        <button class="cancel" nbButton status="danger" (click)="cancel()">Cancel</button>
-                        <button class="submit" status="success" (click)="submit(cardHolderName.value)">Submit</button>
+                        <button nbButton class="cancel" nbButton status="danger" (click)="cancel()">Cancel</button>
+                        <button nbButton class="submit" status="success"
+                            (click)="submit(cardHolderName.value)">Submit</button>
                     </div>
                 </footer>
             </form>
