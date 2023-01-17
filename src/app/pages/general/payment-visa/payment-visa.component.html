@@ -71,14 +71,15 @@
 
         </div>
         <div class="form-data">
-            <form>
+            <form [formGroup]="formData" (ngSubmit)="submit(formData.value)">
                 <br>
                 <h6>Payment Details</h6>
                 <hr>
                 <br>
                 <div class="form-name form-detail">
                     <nb-label for="name">Cardholder Name</nb-label>
-                    <input nbInput #cardHolderName type="text" placeholder="Mrs Kate Smith" id="name" maxlength="24">
+                    <input nbInput #cardHolderName type="text" placeholder="Mrs Kate Smith" id="cardHolderName"
+                        class="form-control" formControlName="cardHolderName">
                     <div class="alert" id="alert-1">
                         Full name required
                     </div>
@@ -86,8 +87,8 @@
                 <br>
                 <div class="form-number form-detail">
                     <nb-label for="number">Card Number</nb-label>
-                    <input nbInput #cardNumber type="text" placeholder="0000 0000 0000 0000" id="number"
-                        onkeypress="return isNumeric(event)">
+                    <input nbInput #cardNumber type="text" placeholder="0000 0000 0000 0000" id="cardNumber"
+                        class="form-control" formControlName="cardNumber" onkeypress="return isNumeric(event)">
                     <div class="alert" id="alert-2">
                         Invalid card number
                     </div>
@@ -96,8 +97,8 @@
                 <div class="form-exp-and-cvv">
                     <div class="form-exp form-detail">
                         <nb-label for="date">Exp Date</nb-label>
-                        <input nbInput #expDate type="text" placeholder="MM/YY" id="date"
-                            onkeypress="return isNumeric(event)">
+                        <input nbInput #expDate type="text" placeholder="MM/YY" id="expDate" class="form-control"
+                            formControlName="expDate" onkeypress="return isNumeric(event)">
                         <div class="alert" id="alert-3">
                             Invalid date
                         </div>
@@ -106,8 +107,8 @@
                     <div class="form-cvv form-detail">
                         <nb-label for="cvv">CVV
                         </nb-label>
-                        <input nbInput #cvv type="password" placeholder="0000" id="cvv" maxlength="4"
-                            onkeypress="return isNumeric(event)">
+                        <input nbInput #cvv type="password" placeholder="0000" id="cvv" class="form-control"
+                            formControlName="cvv" onkeypress="return isNumeric(event)">
                         <div class="alert" id="alert-4">
                             Invalid CVV
                         </div>
@@ -118,7 +119,7 @@
                     <div class="buttons">
                         <button nbButton class="cancel" nbButton status="danger" (click)="cancel()">Cancel</button>
                         <button nbButton class="submit" status="success"
-                            (click)="submit(cardHolderName.value)">Submit</button>
+                            (click)="submit(formData.value)">Submit</button>
                     </div>
                 </footer>
             </form>

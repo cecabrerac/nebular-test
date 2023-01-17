@@ -8,13 +8,13 @@ import { PaymentVisaComponent } from '../payment-visa/payment-visa.component';
   styleUrls: ['./payment.component.scss'],
 })
 export class PaymentComponent {
-  names: string[] = [];
+  data: string[] = [];
 
   constructor(private dialogService: NbDialogService) {}
 
   openVisa(hasScroll: boolean) {
     this.dialogService
       .open(PaymentVisaComponent, { hasScroll })
-      .onClose.subscribe((name) => name && this.names.push(name));
+      .onClose.subscribe((datum) => datum && this.data.push(datum));
   }
 }
