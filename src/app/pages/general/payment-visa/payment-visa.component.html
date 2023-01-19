@@ -1,7 +1,7 @@
 <div class="container">
-    <h1 class="form-title">Visa Data Registration</h1>
     <div class="visaCard-and-form">
         <div class="dots-and-card">
+            <div class="payment-shadow-dots"></div>
             <div class="payment-dots">
                 <svg width="65" height="115" viewBox="0 0 65 115" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <circle cx="17.5" cy="2.5" r="2.5" fill="#E0ECF7" />
@@ -73,12 +73,11 @@
         <div class="form-data">
             <form [formGroup]="formData" (ngSubmit)="submit(formData.value)">
                 <br>
-                <h6>Payment Details</h6>
-                <hr>
-                <br>
+                <h2>Payment Details</h2>
                 <div class="form-name form-detail">
-                    <nb-label for="name">Cardholder Name</nb-label>
-                    <input nbInput #cardHolderName type="text" placeholder="Mrs Kate Smith" id="cardHolderName"
+                    <label for="name">Cardholder Name</label>
+                    <ion-icon name="person-outline"></ion-icon>
+                    <input #cardHolderName type="text" placeholder="Mrs Kate Smith" id="cardHolderName"
                         class="form-control" formControlName="cardHolderName">
                     <div class="alert" id="alert-1">
                         Full name required
@@ -86,8 +85,9 @@
                 </div>
                 <br>
                 <div class="form-number form-detail">
-                    <nb-label for="number">Card Number</nb-label>
-                    <input nbInput #cardNumber type="text" placeholder="0000 0000 0000 0000" id="cardNumber"
+                    <label for="number">Card Number</label>
+                    <ion-icon name="card-outline"></ion-icon>
+                    <input #cardNumber type="text" placeholder="0000 0000 0000 0000" id="cardNumber"
                         class="form-control" formControlName="cardNumber" onkeypress="return isNumeric(event)">
                     <div class="alert" id="alert-2">
                         Invalid card number
@@ -96,8 +96,9 @@
                 <br>
                 <div class="form-exp-and-cvv">
                     <div class="form-exp form-detail">
-                        <nb-label for="date">Exp Date</nb-label>
-                        <input nbInput #expDate type="text" placeholder="MM/YY" id="expDate" class="form-control"
+                        <label for="date">Exp Date</label>
+                        <ion-icon name="calendar-outline"></ion-icon>
+                        <input #expDate type="text" placeholder="MM/YY" id="expDate" class="form-control"
                             formControlName="expDate" onkeypress="return isNumeric(event)">
                         <div class="alert" id="alert-3">
                             Invalid date
@@ -105,9 +106,14 @@
                     </div>
 
                     <div class="form-cvv form-detail">
-                        <nb-label for="cvv">CVV
-                        </nb-label>
-                        <input nbInput #cvv type="password" placeholder="0000" id="cvv" class="form-control"
+                        <label for="cvv">CVV
+                            <ion-icon name="information-circle" class="info">
+                            </ion-icon>
+                            <span
+                                title="The CVV/CVC code (Card Verification Value/Code) is located on the back of your credit/debit card on the right side of the white signature strip">Info</span>
+                        </label>
+                        <ion-icon name="lock-closed-outline"></ion-icon>
+                        <input #cvv type="password" placeholder="0000" id="cvv" class="form-control"
                             formControlName="cvv" onkeypress="return isNumeric(event)">
                         <div class="alert" id="alert-4">
                             Invalid CVV
@@ -117,9 +123,8 @@
 
                 <footer>
                     <div class="buttons">
-                        <button nbButton class="cancel" nbButton status="danger" (click)="cancel()">Cancel</button>
-                        <button nbButton class="submit" status="success"
-                            (click)="submit(formData.value)">Submit</button>
+                        <button class="cancel" status="danger" (click)="cancel()">Cancel</button>
+                        <button class="submit" status="success" (click)="submit(formData.value)">Confirm</button>
                     </div>
                 </footer>
             </form>

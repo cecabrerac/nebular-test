@@ -5,31 +5,29 @@
   font-family: "Nunito", sans-serif;
 }
 
+:root {
+  --primary-light: #8e8aff;
+  --primary: #655dff;
+  --primary-dark: #4f46f8;
+  --secondary: #17c9ff;
+  --alert: #ff6a96;
+  --greyLight-1: #e0ecf7;
+  --greyLight-2: #c8dbf0;
+  --greyDark-1: #92acc4;
+  --greyDark-2: #5a768f;
+}
+
 .container {
-  // width: 688px;
   width: 100%;
   top: 0;
   left: 0;
-  // max-height: 100%;
-  // overflow-y: auto;
-  background-color: rgb(62, 58, 107);
+  background-color: #ffffff;
   border-radius: 10px;
-  box-shadow: inset -2px 2px 2px white;
   display: flex;
   flex-direction: column;
-  // justify-content: center;
   align-items: center;
   margin: 0;
-}
-
-.form-title {
-  font-size: 26px;
-  font-weight: 600;
-  text-align: center;
-  padding-bottom: 6px;
-  color: white;
-  text-shadow: 2px 2px 2px black;
-  border-bottom: solid 1px white;
+  overflow: auto;
 }
 
 .visaCard-and-form {
@@ -43,6 +41,18 @@
   display: flex;
   flex-direction: column;
   gap: 24px;
+  position: relative;
+}
+
+.payment-dots {
+  position: absolute;
+}
+
+.payment-shadow-dots {
+  width: 6.5rem;
+  height: 8rem;
+  background: linear-gradient(to bottom, #e0ecf700 0%, #ffffff 100%);
+  z-index: 200;
 }
 
 .card {
@@ -116,14 +126,26 @@
 // ESTILOS PARA LA PARTE DEL FORMULARIO:
 
 .form-data {
-  width: 320px;
+  width: 280px;
   display: flex;
   flex-direction: column;
+  color: #5a768f;
+}
+
+.form-data h2 {
+  font-size: 2rem;
+  line-height: 1;
+  margin-bottom: 1.4rem;
+  font-family: "Inter", sans-serif;
+  color: #5a768f;
 }
 
 .form-detail {
   display: flex;
   flex-direction: column;
+  position: relative;
+  padding-bottom: 0.6rem;
+  color: #92acc4;
 }
 
 .form-exp-and-cvv {
@@ -150,44 +172,83 @@
 .cancel {
   padding: 6px 12px;
   border-radius: 6px;
-  background-color: rgb(92, 9, 9);
   border: none;
-  color: white;
+  background: #655dff;
+  color: #ffffff;
   cursor: pointer;
 }
+.cancel:focus {
+  outline: none;
+}
 .cancel:hover {
-  background-color: rgb(145, 78, 78);
+  background: #4f46f8;
 }
 
 .submit {
   padding: 6px 12px;
   border-radius: 6px;
-  background-color: darkgreen;
   border: none;
-  color: white;
+  background: #655dff;
+  color: #ffffff;
   cursor: pointer;
 }
+.submit:focus {
+  outline: none;
+}
 .submit:hover {
-  background-color: rgb(3, 150, 3);
+  background: #4f46f8;
 }
 
 input {
-  padding: 6px;
+  // padding: 1rem 1rem 1rem 4rem;
+  border: none;
+  background: transparent;
+  border-radius: 0.6rem;
+  padding: 6px 6px 6px 30px;
+  color: #5a768f;
+  border: solid 1px #c8dbf0;
+  font-family: inherit;
+}
+
+input:focus {
+  outline: none;
+}
+input:hover {
+  border: 1px solid #8e8aff;
+}
+
+ion-icon {
+  position: absolute;
+  font-size: 1.4rem;
+  top: 1.7rem;
+  margin-left: 6px;
+  color: #8e8aff; //primary-light
+  stroke: #655dff; //primary
+  pointer-events: none;
+}
+
+.info {
+  top: 0;
+  left: 2.5rem;
+  color: #92acc4; //greyDark-1
+  content: "Info";
+}
+
+.form-cvv span {
+  color: white;
 }
 
 label {
   font-size: 20px;
-  text-shadow: 2px 2px 2px rgb(19, 7, 59);
 }
 
 .alert {
-  color: red;
-  text-shadow: 2px 2px 2px black;
+  font-family: "Inter", sans-serif;
+  color: #ff6a96;
 }
 
 @media screen and (max-width: 768px) {
   .container {
-    position: fixed;
     top: 0;
     left: 0;
     width: 350px;
@@ -197,5 +258,16 @@ label {
   .visaCard-and-form {
     display: flex;
     flex-direction: column;
+  }
+}
+
+/* Mobile Device Landscape*/
+@media screen and (max-height: 425px) and (min-aspect-ratio: 7/4) {
+  .container {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
   }
 }
