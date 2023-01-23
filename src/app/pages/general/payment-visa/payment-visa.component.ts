@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { NbDialogRef } from '@nebular/theme';
 
 // IMPORT FORMBUILDER AND VALIDATORS:
-import { FormBuilder, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { IsNotDate } from './is-not-date.validator';
 
 @Component({
   selector: 'app-payment-visa',
@@ -10,22 +11,34 @@ import { FormBuilder, Validators } from '@angular/forms';
   styleUrls: ['./payment-visa.component.scss'],
 })
 export class PaymentVisaComponent implements OnInit {
+  // formData: FormGroup;
   // CODE TO HAVE A REACTIVE FORM:
   ///////////////////////////////////////
   stringifiedData: any;
   submitted = false;
-  formData = this.fb.group({
-    cardHolderName: [
-      '',
-      [Validators.required, Validators.minLength(4), Validators.maxLength(24)],
-    ],
-    cardNumber: ['', [Validators.required, Validators.minLength(19)]],
-    expDate: ['', [Validators.required, Validators.minLength(5)]],
-    cvv: [
-      '',
-      [Validators.required, Validators.minLength(3), Validators.maxLength(4)],
-    ],
-  });
+
+  formData = this.fb.group(
+    {
+      cardHolderName: [
+        '',
+        [
+          Validators.required,
+          Validators.minLength(4),
+          Validators.maxLength(24),
+        ],
+      ],
+      cardNumber: ['', [Validators.required, Validators.minLength(19)]],
+      expDate: ['', [Validators.required, Validators.minLength(5)]],
+      cvv: [
+        '',
+        [Validators.required, Validators.minLength(3), Validators.maxLength(4)],
+      ],
+    }
+    // {
+    //   // Used custom form validator IsNotDate:
+    //   validator: IsNotDate('expDate'),
+    // }
+  );
 
   ///////////////////////////////////////
 
@@ -46,6 +59,9 @@ export class PaymentVisaComponent implements OnInit {
   }
 
   //GETTERS:
+  // get f() {
+  //   return this.formData.controls;
+  // }
   //////////////////////////////////////
   get cardHolderName() {
     return this.formData.get('cardHolderName');
@@ -59,7 +75,9 @@ export class PaymentVisaComponent implements OnInit {
   get cvv() {
     return this.formData.get('cvv');
   }
+  ////////////////////////////////////////////////
 
+  //FUNCTIONS:
   ////////////////////////////////////////////////
   numberAutoFormat() {
     let valueNumber = this.cardNumber.value;
@@ -88,26 +106,27 @@ export class PaymentVisaComponent implements OnInit {
   }
   ////////////////////////////////////////////////////////
 
-  isNotDate(element) {
-    let actualDate = new Date();
-    let month = actualDate.getMonth() + 1; // start january 0 we need to add + 1
-    let year = Number(actualDate.getFullYear().toString().substr(-2)); // 2022 -> 22
-    let dateNumber = element.value.match(/\d{2,4}/g);
-    let monthNumber = Number(dateNumber[0]);
-    let yearNumber = Number(dateNumber[1]);
+  // isNotDate(element) {
+  //   let actualDate = new Date();
+  //   let month = actualDate.getMonth() + 1; // start january 0 we need to add + 1
+  //   let year = Number(actualDate.getFullYear().toString().substr(-2)); // 2022 -> 22
+  //   let dateNumber = element.value.match(/\d{2,4}/g);
+  //   let monthNumber = Number(dateNumber[0]);
+  //   let yearNumber = Number(dateNumber[1]);
 
-    if (
-      element.value === '' ||
-      monthNumber < 1 ||
-      monthNumber > 12 ||
-      yearNumber < year ||
-      (monthNumber <= month && yearNumber === year)
-    ) {
-      return true;
-    } else {
-      return false;
-    }
-  }
+  //   if (
+  //     element.value === '' ||
+  //     monthNumber < 1 ||
+  //     monthNumber > 12 ||
+  //     yearNumber < year ||
+  //     (monthNumber <= month && yearNumber === year)
+  //   ) {
+  //     return true;
+  //   } else {
+  //     return false;
+  //   }
+  // }
+  ///////////////////////////////////////////////////////
 
   dateAutoFormat() {
     let dateValue = this.expDate.value;
@@ -134,15 +153,7 @@ export class PaymentVisaComponent implements OnInit {
       return dateValue;
     }
   }
-
   ////////////////////////////////////
-
-  /* CHECK IF KEY PRESSED IS A NUMBER (input of card number, date and cvv) */
-  isNumeric(event) {
-    if ((event.keyCode < 48 || event.keyCode > 57) && event.keyCode > 31) {
-      return false;
-    }
-  }
 
   ngOnInit(): void {}
 }
