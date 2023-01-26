@@ -761,11 +761,7 @@ class PaymentVisaComponent {
         this.formData = this.fb.group({
             cardHolderName: [
                 '',
-                [
-                    _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required,
-                    _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].minLength(4),
-                    _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].maxLength(24),
-                ],
+                [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].minLength(4), _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].maxLength(24)],
             ],
             cardNumber: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].minLength(19)]],
             expDate: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].minLength(5)]],
@@ -773,12 +769,7 @@ class PaymentVisaComponent {
                 '',
                 [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].minLength(3), _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].maxLength(4)],
             ],
-        }
-        // {
-        //   // Used custom form validator IsNotDate:
-        //   validator: IsNotDate('expDate'),
-        // }
-        );
+        });
     } //private fb: FormBuilder is part of the reactive form
     cancel() {
         this.ref.close();
@@ -833,26 +824,6 @@ class PaymentVisaComponent {
         }
     }
     ////////////////////////////////////////////////////////
-    // isNotDate(element) {
-    //   let actualDate = new Date();
-    //   let month = actualDate.getMonth() + 1; // start january 0 we need to add + 1
-    //   let year = Number(actualDate.getFullYear().toString().substr(-2)); // 2022 -> 22
-    //   let dateNumber = element.value.match(/\d{2,4}/g);
-    //   let monthNumber = Number(dateNumber[0]);
-    //   let yearNumber = Number(dateNumber[1]);
-    //   if (
-    //     element.value === '' ||
-    //     monthNumber < 1 ||
-    //     monthNumber > 12 ||
-    //     yearNumber < year ||
-    //     (monthNumber <= month && yearNumber === year)
-    //   ) {
-    //     return true;
-    //   } else {
-    //     return false;
-    //   }
-    // }
-    ///////////////////////////////////////////////////////
     dateAutoFormat() {
         let dateValue = this.expDate.value;
         // if white space -> change to ''. If is not a number between 0-9 -> change to ''

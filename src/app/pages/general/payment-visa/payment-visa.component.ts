@@ -3,7 +3,7 @@ import { NbDialogRef } from '@nebular/theme';
 
 // IMPORT FORMBUILDER AND VALIDATORS:
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { IsNotDate } from './is-not-date.validator';
+import { isnotdate } from './is-not-date.validator';
 
 @Component({
   selector: 'app-payment-visa',
@@ -11,34 +11,23 @@ import { IsNotDate } from './is-not-date.validator';
   styleUrls: ['./payment-visa.component.scss'],
 })
 export class PaymentVisaComponent implements OnInit {
-  // formData: FormGroup;
   // CODE TO HAVE A REACTIVE FORM:
   ///////////////////////////////////////
   stringifiedData: any;
   submitted = false;
 
-  formData = this.fb.group(
-    {
-      cardHolderName: [
-        '',
-        [
-          Validators.required,
-          Validators.minLength(4),
-          Validators.maxLength(24),
-        ],
-      ],
-      cardNumber: ['', [Validators.required, Validators.minLength(19)]],
-      expDate: ['', [Validators.required, Validators.minLength(5)]],
-      cvv: [
-        '',
-        [Validators.required, Validators.minLength(3), Validators.maxLength(4)],
-      ],
-    }
-    // {
-    //   // Used custom form validator IsNotDate:
-    //   validator: IsNotDate('expDate'),
-    // }
-  );
+  formData = this.fb.group({
+    cardHolderName: [
+      '',
+      [Validators.required, Validators.minLength(4), Validators.maxLength(24)],
+    ],
+    cardNumber: ['', [Validators.required, Validators.minLength(19)]],
+    expDate: ['', [Validators.required, Validators.minLength(5)]],
+    cvv: [
+      '',
+      [Validators.required, Validators.minLength(3), Validators.maxLength(4)],
+    ],
+  });
 
   ///////////////////////////////////////
 
@@ -105,28 +94,6 @@ export class PaymentVisaComponent implements OnInit {
     }
   }
   ////////////////////////////////////////////////////////
-
-  // isNotDate(element) {
-  //   let actualDate = new Date();
-  //   let month = actualDate.getMonth() + 1; // start january 0 we need to add + 1
-  //   let year = Number(actualDate.getFullYear().toString().substr(-2)); // 2022 -> 22
-  //   let dateNumber = element.value.match(/\d{2,4}/g);
-  //   let monthNumber = Number(dateNumber[0]);
-  //   let yearNumber = Number(dateNumber[1]);
-
-  //   if (
-  //     element.value === '' ||
-  //     monthNumber < 1 ||
-  //     monthNumber > 12 ||
-  //     yearNumber < year ||
-  //     (monthNumber <= month && yearNumber === year)
-  //   ) {
-  //     return true;
-  //   } else {
-  //     return false;
-  //   }
-  // }
-  ///////////////////////////////////////////////////////
 
   dateAutoFormat() {
     let dateValue = this.expDate.value;
