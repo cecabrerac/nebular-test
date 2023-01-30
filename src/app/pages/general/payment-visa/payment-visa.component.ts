@@ -22,7 +22,7 @@ export class PaymentVisaComponent implements OnInit {
       [Validators.required, Validators.minLength(4), Validators.maxLength(24)],
     ],
     cardNumber: ['', [Validators.required, Validators.minLength(19)]],
-    expDate: ['', [Validators.required, Validators.minLength(5)]],
+    expDate: ['', [Validators.required, Validators.minLength(5), isnotdate]],
     cvv: [
       '',
       [Validators.required, Validators.minLength(3), Validators.maxLength(4)],
@@ -34,7 +34,7 @@ export class PaymentVisaComponent implements OnInit {
   constructor(
     protected ref: NbDialogRef<PaymentVisaComponent>,
     private fb: FormBuilder
-  ) {} //private fb: FormBuilder is part of the reactive form
+  ) {}
 
   cancel() {
     this.ref.close();
@@ -47,11 +47,8 @@ export class PaymentVisaComponent implements OnInit {
     this.ref.close(datum);
   }
 
+  ////////////////////////////////////////////////
   //GETTERS:
-  // get f() {
-  //   return this.formData.controls;
-  // }
-  //////////////////////////////////////
   get cardHolderName() {
     return this.formData.get('cardHolderName');
   }
@@ -67,7 +64,7 @@ export class PaymentVisaComponent implements OnInit {
   ////////////////////////////////////////////////
 
   //FUNCTIONS:
-  ////////////////////////////////////////////////
+
   numberAutoFormat() {
     let valueNumber = this.cardNumber.value;
     // if white space change to ''. If is not a number between 0-9 change to ''
@@ -93,6 +90,7 @@ export class PaymentVisaComponent implements OnInit {
       return valueNumber;
     }
   }
+
   ////////////////////////////////////////////////////////
 
   dateAutoFormat() {
@@ -120,6 +118,7 @@ export class PaymentVisaComponent implements OnInit {
       return dateValue;
     }
   }
+
   ////////////////////////////////////
 
   ngOnInit(): void {}
