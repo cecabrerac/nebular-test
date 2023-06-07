@@ -1,0 +1,14 @@
+<div class="messages-box">
+  <p>Windows Messages</p>
+  <li *ngFor="let message of messages">{{message}}</li>
+</div>
+<!-- <div class="input-message">
+  <label for="input-message"></label>
+  <input type="text" placeholder="Enter your message" ng-model="newMessage" />
+  <button (click)="setValue()>Send Message</button>
+</div> -->
+
+<form>
+  <input type="text" name="newMessage" id="newMessage" [(ngModel)]="formMessage">
+  <button (click)="sendMessage()">send</button>
+</form>

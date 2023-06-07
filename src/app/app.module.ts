@@ -19,6 +19,7 @@ import {
   NbAlertModule,
   NbDialogService,
   NbDialogModule,
+  NbChatModule,
 } from '@nebular/theme';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -29,6 +30,7 @@ import { SelectBoxComponent } from './pages/general/select-box/select-box.compon
 import { GraficasComponent } from './pages/general/graficas/graficas.component';
 import { UserDetailsComponent } from './pages/general/user-details/user-details.component';
 import { PaymentVisaComponent } from './pages/general/payment-visa/payment-visa.component';
+import { MessagesComponent } from './pages/general/messages/messages.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +40,7 @@ import { PaymentVisaComponent } from './pages/general/payment-visa/payment-visa.
     GraficasComponent,
     UserDetailsComponent,
     PaymentVisaComponent,
+    MessagesComponent,
   ],
   imports: [
     BrowserModule,
@@ -60,6 +63,7 @@ import { PaymentVisaComponent } from './pages/general/payment-visa/payment-visa.
     NbButtonModule,
     NbAlertModule,
     NbDialogModule.forRoot(),
+    NbChatModule,
   ],
   exports: [FormsModule, ReactiveFormsModule],
   providers: [],

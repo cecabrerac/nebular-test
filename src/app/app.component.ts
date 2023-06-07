@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { WebSocketService } from './web-socket.service';
 
 @Component({
@@ -13,7 +13,14 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     // here we want to listen to an event from the sockect.io server
-    this.WebSoCketService.listen('test event').subscribe((data) => {
+    // this.WebSoCketService.listen('message').subscribe((data) => {
+    //   console.log(data);
+    // });
+  }
+
+  ngAfterViewInit() {
+    // here we want to listen to an event from the sockect.io server
+    this.WebSoCketService.listen('message').subscribe((data) => {
       console.log(data);
     });
   }

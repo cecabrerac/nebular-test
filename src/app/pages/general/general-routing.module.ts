@@ -6,6 +6,7 @@ import { SelectBoxComponent } from './select-box/select-box.component';
 import { UnsuscribeComponent } from './unsuscribe/unsuscribe.component';
 import { PaymentComponent } from './payment/payment.component';
 import { PaymentVisaComponent } from './payment-visa/payment-visa.component';
+import { MessagesComponent } from './messages/messages.component';
 
 const routes: Routes = [
   {
@@ -17,6 +18,7 @@ const routes: Routes = [
       { path: 'unsuscribe', component: UnsuscribeComponent },
       { path: 'payment', component: PaymentComponent },
       { path: 'visa', component: PaymentVisaComponent },
+      { path: 'messages', component: MessagesComponent },
       // { path: 'select', redirectTo: 'select', pathMatch: 'full' },
     ],
   },
