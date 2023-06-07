@@ -328,6 +328,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _unsuscribe_unsuscribe_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./unsuscribe/unsuscribe.component */ "7g3V");
 /* harmony import */ var _payment_payment_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./payment/payment.component */ "9XAT");
 /* harmony import */ var _payment_visa_payment_visa_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./payment-visa/payment-visa.component */ "mm3K");
+/* harmony import */ var _messages_messages_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./messages/messages.component */ "m6XN");
+
 
 
 
@@ -348,6 +350,7 @@ const routes = [
             { path: 'unsuscribe', component: _unsuscribe_unsuscribe_component__WEBPACK_IMPORTED_MODULE_5__["UnsuscribeComponent"] },
             { path: 'payment', component: _payment_payment_component__WEBPACK_IMPORTED_MODULE_6__["PaymentComponent"] },
             { path: 'visa', component: _payment_visa_payment_visa_component__WEBPACK_IMPORTED_MODULE_7__["PaymentVisaComponent"] },
+            { path: 'messages', component: _messages_messages_component__WEBPACK_IMPORTED_MODULE_8__["MessagesComponent"] },
         ],
     },
 ];
