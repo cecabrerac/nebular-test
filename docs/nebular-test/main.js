@@ -177,15 +177,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "fXoL");
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! rxjs */ "qCKp");
 /* harmony import */ var socket_io_client__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! socket.io-client */ "2qj+");
+/* harmony import */ var src_environments_environment__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/environments/environment */ "AytR");
+
 
 
 
 
 // import { HttpClient } from '@angular/common/http';
 class WebSocketService {
+    // readonly uri: string = 'https://apptrial.herokuapp.com/';
     constructor() {
-        // readonly uri: string = environment.serverURL;
-        this.uri = 'https://apptrial.herokuapp.com/';
+        this.uri = src_environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].serverURL;
         this.socket = Object(socket_io_client__WEBPACK_IMPORTED_MODULE_2__["io"])(this.uri);
     }
     listen(eventName) {

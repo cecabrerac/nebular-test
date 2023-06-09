@@ -9,8 +9,8 @@ import { environment } from 'src/environments/environment';
 })
 export class WebSocketService {
   socket: any;
-  // readonly uri: string = environment.serverURL;
-  readonly uri: string = 'https://apptrial.herokuapp.com/';
+  readonly uri: string = environment.serverURL;
+  // readonly uri: string = 'https://apptrial.herokuapp.com/';
 
   constructor() {
     this.socket = io(this.uri);
