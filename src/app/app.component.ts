@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit, isDevMode } from '@angular/core';
 import { WebSocketService } from './web-socket.service';
 
 @Component({
@@ -16,6 +16,12 @@ export class AppComponent implements OnInit {
     // this.WebSoCketService.listen('message').subscribe((data) => {
     //   console.log(data);
     // });
+
+    if (isDevMode()) {
+      console.log('Development!');
+    } else {
+      console.log('Production!');
+    }
   }
 
   ngAfterViewInit() {
