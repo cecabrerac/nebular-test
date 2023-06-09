@@ -9,6 +9,6 @@
 </div> -->
 
 <form>
-  <input type="text" name="newMessage" id="newMessage" [(ngModel)]="formMessage">
+  <input type="text" #newMessage name="newMessage" id="newMessage" placeholder="type message" [(ngModel)]="formMessage">
   <button (click)="sendMessage()">send</button>
 </form>

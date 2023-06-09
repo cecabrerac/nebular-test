@@ -32,9 +32,7 @@ export class MessagesComponent implements OnInit {
   }
   sendMessage(): void {
     this.newMessage = this.formMessage;
-    // this.messages.push(this.newMessage);
+    this.formMessage = '';
     this.WebSoCketService.emit('message', this.newMessage);
-    // console.log(f.value); // { first: '', last: '' }
-    // console.log(f.valid); // false
   }
 }
