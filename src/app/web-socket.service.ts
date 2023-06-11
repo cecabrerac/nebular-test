@@ -13,7 +13,9 @@ export class WebSocketService {
   // readonly uri: string = 'https://apptrial.herokuapp.com/';
 
   constructor() {
-    this.socket = io(this.uri);
+    this.socket = io(this.uri, {
+      withCredentials: true,
+    });
   }
 
   listen(eventName: string) {
