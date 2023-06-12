@@ -14,10 +14,7 @@ export class WebSocketService {
 
   constructor() {
     this.socket = io(this.uri, {
-      withCredentials: true,
-      extraHeaders: {
-        'my-custom-header': 'abcd',
-      },
+      transports: ['websocket', 'polling', 'flashsocket'],
     });
   }
 
