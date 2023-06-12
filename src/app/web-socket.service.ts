@@ -14,7 +14,7 @@ export class WebSocketService {
 
   constructor() {
     this.socket = io(this.uri, {
-      transports: ['websocket', 'polling', 'flashsocket'],
+      transports: ['websocket'],
     });
   }
 
