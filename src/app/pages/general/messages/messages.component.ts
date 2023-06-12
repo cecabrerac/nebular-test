@@ -7,7 +7,7 @@ import { NgForm } from '@angular/forms';
   templateUrl: './messages.component.html',
   styleUrls: ['./messages.component.css'],
 })
-export class MessagesComponent implements OnInit {
+export class MessagesComponent implements OnInit, AfterViewInit {
   title = 'Messages';
   messages = [];
   newMessage: string;
