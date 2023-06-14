@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable, Subscriber, observable } from 'rxjs';
+import { Observable } from 'rxjs';
 import { io } from 'socket.io-client';
 import { environment } from 'src/environments/environment';
 // import { HttpClient } from '@angular/common/http';
@@ -10,7 +10,6 @@ import { environment } from 'src/environments/environment';
 export class WebSocketService {
   socket: any;
   readonly uri: string = environment.serverURL;
-  // readonly uri: string = 'https://apptrial.herokuapp.com/';
 
   constructor() {
     this.socket = io(this.uri, {
