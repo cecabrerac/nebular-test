@@ -25,7 +25,7 @@ export class MessagesComponent implements OnInit, AfterViewInit {
   ngAfterViewInit() {
     // here we want to listen to an event from the sockect.io server
     this.WebSoCketService.listen('message').subscribe((data) => {
-      console.log(data);
+      // console.log(data);
       this.messages.push(data);
       console.log(this.newMessage);
     });
