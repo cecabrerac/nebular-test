@@ -12,14 +12,10 @@ export class WebSocketService {
   readonly uri: string = environment.serverURL;
 
   constructor() {
-    this.socket = io(this.uri);
+    this.socket = io(this.uri, {
+      transports: ['websocket'],
+    });
   }
-
-  // constructor() {
-  //   this.socket = io(this.uri, {
-  //     transports: ['websocket'],
-  //   });
-  // }
 
   listen(eventName: string) {
     return new Observable((subscriber) => {
