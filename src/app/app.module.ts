@@ -17,9 +17,8 @@ import {
   NbRadioModule,
   NbButtonModule,
   NbAlertModule,
-  NbDialogService,
+  // NbDialogService,
   NbDialogModule,
-  NbChatModule,
 } from '@nebular/theme';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -62,8 +61,8 @@ import { MessagesComponent } from './pages/general/messages/messages.component';
     NbRadioModule,
     NbButtonModule,
     NbAlertModule,
+    // NbDialogService,
     NbDialogModule.forRoot(),
-    NbChatModule,
   ],
   exports: [FormsModule, ReactiveFormsModule],
   providers: [],
