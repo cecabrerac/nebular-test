@@ -31,11 +31,11 @@ export const appUsers = [
   },
   {
     id: 2,
-    username: 'wcastiblanco',
-    name: 'William Castiblanco',
+    username: 'wcastillo',
+    name: 'William Castillo',
     operation: '$2,200',
     gain: '$2.50',
-    email: 'wcastiblancoz@gmail.com',
+    email: 'wcastilloz@gmail.com',
     carros: [
       {
         marca: 'Toyota',
