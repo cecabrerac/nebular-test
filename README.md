@@ -11,3 +11,7 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 20-jun-2023
 Starting traslation with ngx-translate
 npm install @ngx-translate/core @ngx-translate/http-loader
+
+## Created by
+
+Carlos Cabrera

@@ -34,6 +34,7 @@ import { PaymentComponent } from './payment/payment.component';
     NbRadioModule,
     NbButtonModule,
     NbAlertModule,
+    // NbDialogService,
     NbDialogModule.forRoot(),
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
