@@ -1,6 +1,8 @@
 import { Component, OnInit, AfterViewInit, isDevMode } from '@angular/core';
 import { WebSocketService } from './web-socket.service';
 
+import { TranslateService } from '@ngx-translate/core';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -9,7 +11,10 @@ import { WebSocketService } from './web-socket.service';
 export class AppComponent implements OnInit, AfterViewInit {
   title = 'nebular-test';
 
-  constructor(private WebSoCketService: WebSocketService) {}
+  constructor(
+    private WebSoCketService: WebSocketService,
+    public translateService: TranslateService
+  ) {}
 
   ngOnInit() {
     // here we want to listen to an event from the sockect.io server

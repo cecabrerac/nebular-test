@@ -1,5 +1,18 @@
 <nb-layout>
-  <nb-layout-header fixed> Test </nb-layout-header>
+  <nb-layout-header fixed>
+    <div class="header">
+      <h1>Test</h1>
+      <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+      <div>
+        <label>Language</label>
+        <select (change)="changeLanguage($event)">
+          <option value="es">Español</option>
+          <option value="en">Inglés</option>
+          <option value="fr">Francés</option>
+        </select>
+      </div>
+    </div>
+  </nb-layout-header>
 
   <nb-layout-column>
     <h2>Angular Router App</h2>
