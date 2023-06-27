@@ -1,26 +1,39 @@
 <nb-layout>
-  <nb-layout-header fixed> Test </nb-layout-header>
+  <nb-layout-header fixed>
+    <div class="header">
+      <h2>{{"header-title" | translate}}</h2>
+      <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+      <p> {{"select-language" | translate}} </p>
+      &nbsp;&nbsp;
+      <app-switch-lang></app-switch-lang>
+    </div>
+  </nb-layout-header>
 
   <nb-layout-column>
-    <h2>Angular Router App</h2>
+    <h2>{{"appName" | translate}} </h2>
 
     <!-- This nav gives you links to click, which tells the router which route to use (defined in the routes constant in  AppRoutingModule) -->
     <nav>
       <ul>
         <li>
-          <a routerLink="/general/select" routerLinkActive="active" ariaCurrentWhenActive="page">Users Info</a>
+          <a routerLink="/general/select" routerLinkActive="active" ariaCurrentWhenActive="page">{{"usersInfo" |
+            translate}}</a>
         </li>
         <li>
-          <a routerLink="/general/graficas" routerLinkActive="active" ariaCurrentWhenActive="page">Graficas</a>
+          <a routerLink="/general/graficas" routerLinkActive="active" ariaCurrentWhenActive="page">{{"charts" |
+            translate}}</a>
         </li>
         <li>
-          <a routerLink="/general/unsuscribe" routerLinkActive="active" ariaCurrentWhenActive="page">Retirarse</a>
+          <a routerLink="/general/unsuscribe" routerLinkActive="active" ariaCurrentWhenActive="page">{{"deleteAccount" |
+            translate}}</a>
         </li>
         <li>
-          <a routerLink="/general/payment" routerLinkActive="active" ariaCurrentWhenActive="page">Pagar</a>
+          <a routerLink="/general/payment" routerLinkActive="active" ariaCurrentWhenActive="page">{{"pay" |
+            translate}}</a>
         </li>
         <li>
-          <a routerLink="/general/messages" routerLinkActive="active" ariaCurrentWhenActive="page">Mensajes</a>
+          <a routerLink="/general/messages" routerLinkActive="active" ariaCurrentWhenActive="page">{{"messages" |
+            translate}}</a>
         </li>
       </ul>
     </nav>

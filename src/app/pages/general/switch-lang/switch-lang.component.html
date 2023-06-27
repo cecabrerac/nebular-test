@@ -1,0 +1,9 @@
+<span>
+  <nb-select #selectedLang (selectedChange)="switchLang(selectedLang.selected)"
+    placeholder="{{'select-language' | translate}}">
+    <nb-option *ngFor="let language of translate.getLangs()" [value]="language"
+      selected="language === translate.currentLang">
+      {{language=="es"? "Español" : "English"}}
+    </nb-option>
+  </nb-select>
+</span>
