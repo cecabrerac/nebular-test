@@ -1,0 +1,112 @@
+<div [hidden]="submitted">
+  <h4>Retirarse</h4>
+
+  <!-- PRUEBA BINDING ENTRE EL TEMPLATE Y EL COMPONENTE:
+  <p> {{ answersForm.value | json }} </p> -->
+
+
+  <nb-card class="own-scroll" size="medium" accent="success" [nbSpinner]="loading" nbSpinnerStatus="success"
+    nbSpinnerSize="large">
+
+    <nb-card-header>
+      <h6>
+        Ayudanos a mejorar: por favor responde esta breve encuesta y dejanos tu
+        comentario acerca de nuestros servicios.
+      </h6>
+    </nb-card-header>
+
+    <nb-card-body>
+
+
+      <form [formGroup]="answersForm" (ngSubmit)="onSubmit()">
+
+        <nb-card id="pregunta1">
+          <nb-card-body>
+            <p>Cuán satisfecho se encuentra de la empresa en general?</p>
+            <nb-radio-group type="radio" class="form-control" id="pregunta1" formControlName="pregunta1"
+              name="pregunta1">
+              <nb-radio value="Muy satisfecho">Muy satisfecho</nb-radio>
+              <nb-radio value="Satisfecho">Satisfecho</nb-radio>
+              <nb-radio value="Poco satisfecho">Poco satisfecho</nb-radio>
+              <nb-radio value="Nada satisfecho">Nada satisfecho</nb-radio>
+            </nb-radio-group>
+          </nb-card-body>
+          <div class="alert">
+            <div *ngIf="pregunta1 && pregunta1.invalid">
+              Seleccione una opción.
+            </div>
+          </div>
+        </nb-card>
+
+        <nb-card id="pregunta2">
+          <nb-card-body>
+            <p>Cuán probable es que recomiende nuestros productos o servicios?</p>
+            <nb-radio-group type="radio" class="form-control" id="pregunta2" formControlName="pregunta2"
+              name="pregunta2">
+              <nb-radio value="Muy probable">Muy probable</nb-radio>
+              <nb-radio value="Probable">Probable</nb-radio>
+              <nb-radio value="Poco probable">Poco probable</nb-radio>
+              <nb-radio value="Nada probable">Nada probable</nb-radio>
+            </nb-radio-group>
+          </nb-card-body>
+          <div class="alert">
+            <div *ngIf="pregunta2 && pregunta2.invalid">
+              Seleccione una opción.
+            </div>
+          </div>
+        </nb-card>
+
+        <nb-card id="pregunta3">
+          <nb-card-body>
+            <p>Como calificaría la calidad de la atención recibida?</p>
+            <nb-radio-group type="radio" class="form-control" id="pregunta3" formControlName="pregunta3"
+              name="pregunta3">
+              <nb-radio value="Muy buena">Muy buena</nb-radio>
+              <nb-radio value="Buena">Buena</nb-radio>
+              <nb-radio value="Regular">Regular</nb-radio>
+              <nb-radio value="Mala">Mala</nb-radio>
+            </nb-radio-group>
+          </nb-card-body>
+          <div class="alert">
+            <div *ngIf="pregunta3 && pregunta3.invalid">
+              Seleccione una opción.
+            </div>
+          </div>
+        </nb-card>
+
+        <nb-card id="comentario">
+          <nb-card-body>
+            <p class="comentario">Déjanos un comentario adicional?</p>
+            <textarea nbInput fullWidth class="form-control" id="comentario" formControlName="comentario"
+              name="comentario" placeholder="Escribe aquí tu comentario (mínimo 7 caracteres)"></textarea>
+          </nb-card-body>
+          <div class="alert">
+            <div *ngIf="comentario && comentario.invalid">
+              Se requiere un comentario de al menos 7 caracteres.
+            </div>
+          </div>
+        </nb-card>
+
+        <div class="btnDespedida">
+          <button nbButton type="submit" [disabled]="!answersForm.valid">
+            Enviar
+          </button>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+          <h6 id="despedida" [hidden]="!answersForm.valid">Esperamos que regreses pronto!</h6>
+
+        </div>
+      </form>
+    </nb-card-body>
+  </nb-card>
+</div>
+
+
+<div [hidden]="!submitted">
+  <h3>Acabas de enviar la siguiente información en formato JSON:</h3>
+  <P>{{answersForm.value | json}}</P>
+  <br />
+  <button nbButton type="button" (click)="submitted = false">
+    Editar respuestas
+  </button>
+</div>
