@@ -1,7 +1,29 @@
 {
   "header-title": "Prueba de Traducción",
   "select-language": "Seleccione idioma",
+  "appName": "Aplicación en Angular",
+  "usersInfo":"Información de usuarios",
+  "charts":"Gráficas",
+  "deleteAccount":"Borrar Cuenta",
+  "pay":"Pagar con VISA",
+  "messages":"Mensajes",
   "HELLO": "Hola",
+  "users":{
+    "title": "Información de Usuarios",
+    "search": "Buscar usuario",
+    "placeholder": "Seleccione usuario",
+    "brand": "Marca",
+    "color": "Color",
+    "otherInfo": "Otra info"
+  },
+  "chart": {
+    "title": "Grafica de ejemplo"
+  },
+  "msg": {
+    "title": "Ventana de Mensajes:",
+    "placeholder": "Escriba su mensaje",
+    "send": "Enviar"
+  },
   "unsubscribe": {
     "withdrawal": "Restirarse",
     "help": "Ayudanos a mejorar: por favor responde esta breve encuesta y dejanos tu comentario acerca de nuestros servicios.",

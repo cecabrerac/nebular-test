@@ -1,10 +1,11 @@
-<h4>Users Information</h4>
+<h4>{{"users.title" | translate}}</h4>
 
 <nb-card class="own-scroll" size="medium" accent="success" [nbSpinner]="loading" nbSpinnerStatus="success"
   nbSpinnerSize="large">
   <nb-card-header>
-    <span>Search user</span>
-    <nb-select [selected]="type" placeholder="Select user" (selectedChange)="getUser($event); type = $event">
+    <span>{{"users.search" | translate}}</span>
+    <nb-select [selected]="type" placeholder="{{'users.placeholder' | translate}}"
+      (selectedChange)="getUser($event); type = $event">
       <nb-option placement="right" *ngFor="let user of appUsers" value="{{ user.username }}" [attr.title]="user.name">{{
         user.username }}
       </nb-option>
@@ -18,17 +19,17 @@
         {{ item.modelo }}
       </div>
       <div class="visited-pages-count">
-        <div class="caption">Marca</div>
+        <div class="caption">{{"users.brand" | translate}}</div>
         <div class="value">{{ item.marca }}</div>
       </div>
 
       <div class="visited-pages-count">
-        <div class="caption">Color</div>
+        <div class="caption">{{"users.color" | translate}}</div>
         <div class="value">{{ item.color }}</div>
       </div>
 
       <div class="visited-pages-count">
-        <div class="caption">Otra info</div>
+        <div class="caption">{{"users.otherInfo" | translate}}</div>
         <div class="value">{{ item.marca }}</div>
       </div>
     </nb-list-item>
