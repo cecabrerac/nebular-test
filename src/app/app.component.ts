@@ -13,8 +13,17 @@ export class AppComponent implements OnInit, AfterViewInit {
 
   constructor(
     private WebSoCketService: WebSocketService,
-    public translateService: TranslateService
-  ) {}
+    public translate: TranslateService
+  ) {
+    translate.addLangs(['es', 'en']);
+    const lang = translate.getBrowserLang();
+    if (lang !== 'es' && lang !== 'en') {
+      translate.setDefaultLang('en');
+      translate.use('en');
+    } else {
+      translate.use('es');
+    }
+  }
 
   ngOnInit() {
     // here we want to listen to an event from the sockect.io server

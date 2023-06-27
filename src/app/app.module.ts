@@ -17,7 +17,6 @@ import {
   NbRadioModule,
   NbButtonModule,
   NbAlertModule,
-  // NbDialogService,
   NbDialogModule,
 } from '@nebular/theme';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
@@ -35,10 +34,11 @@ import { MessagesComponent } from './pages/general/messages/messages.component';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
-import { TranslationHttpLoader } from './translation-http-loader';
+import { SwitchLangComponent } from './pages/general/switch-lang/switch-lang.component';
 
+// AoT requires an exported function for factories
 export function HttpLoaderFactory(httpClient: HttpClient) {
-  return new TranslationHttpLoader(httpClient);
+  return new TranslateHttpLoader(httpClient, './assets/i18n/', '.json');
 }
 
 @NgModule({
@@ -50,6 +50,7 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     UserDetailsComponent,
     PaymentVisaComponent,
     MessagesComponent,
+    SwitchLangComponent,
   ],
   imports: [
     BrowserModule,
@@ -71,7 +72,6 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     NbRadioModule,
     NbButtonModule,
     NbAlertModule,
-    // NbDialogService,
     NbDialogModule.forRoot(),
     HttpClientModule,
     TranslateModule.forRoot({

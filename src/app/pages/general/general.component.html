@@ -1,16 +1,11 @@
 <nb-layout>
   <nb-layout-header fixed>
     <div class="header">
-      <h1>Test</h1>
-      <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
-      <div>
-        <label>Language</label>
-        <select (change)="changeLanguage($event)">
-          <option value="es">Español</option>
-          <option value="en">Inglés</option>
-          <option value="fr">Francés</option>
-        </select>
-      </div>
+      <h2>{{"header-title" | translate}}</h2>
+      <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+      <p> {{"select-language" | translate}} </p>
+      &nbsp;&nbsp;
+      <app-switch-lang></app-switch-lang>
     </div>
   </nb-layout-header>
 

@@ -10,14 +10,16 @@ import { TranslateService } from '@ngx-translate/core';
 export class GeneralComponent implements OnInit {
   defaultLang: string = 'es';
 
-  constructor(public translateService: TranslateService) {}
-
-  ngOnInit(): void {
-    this.translateService.use(this.defaultLang);
+  constructor(public translate: TranslateService) {
+    translate.addLangs(['es', 'en']);
+    const lang = translate.getBrowserLang();
+    if (lang !== 'es' && lang !== 'en') {
+      translate.setDefaultLang('en');
+      translate.use('en');
+    } else {
+      translate.use('es');
+    }
   }
 
-  changeLanguage(event) {
-    let lang = (event.target as HTMLInputElement).value;
-    this.translateService.use(lang);
-  }
+  ngOnInit(): void {}
 }
