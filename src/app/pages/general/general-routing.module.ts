@@ -7,11 +7,12 @@ import { UnsuscribeComponent } from './unsuscribe/unsuscribe.component';
 import { PaymentComponent } from './payment/payment.component';
 import { PaymentVisaComponent } from './payment-visa/payment-visa.component';
 import { MessagesComponent } from './messages/messages.component';
+import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: GeneralComponent,
+    component: HomeComponent,
     children: [
       { path: 'select', component: SelectBoxComponent },
       { path: 'graficas', component: GraficasComponent },
