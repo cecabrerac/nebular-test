@@ -7,6 +7,7 @@
   "deleteAccount":"Delete Account",
   "pay":"VISA Payment",
   "messages":"Messages",
+  "withdrawal":"Withdrawal",
   "HELLO": "Hello",
   "users":{
     "title": "Users information",

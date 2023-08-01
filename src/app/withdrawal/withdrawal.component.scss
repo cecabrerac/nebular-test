@@ -1,0 +1,23 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Nunito", sans-serif;
+}
+
+:root {
+  --primary-light: #8e8aff;
+  --primary: #655dff;
+  --primary-dark: #4f46f8;
+  --secondary: #17c9ff;
+  --alert: #ff6a96;
+  --greyLight-1: #e0ecf7;
+  --greyLight-2: #c8dbf0;
+  --greyDark-1: #92acc4;
+  --greyDark-2: #5a768f;
+}
+
+.alert {
+  font-family: "Inter", sans-serif;
+  color: #ff6a96;
+}

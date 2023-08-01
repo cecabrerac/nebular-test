@@ -7,6 +7,7 @@ import { UnsuscribeComponent } from './unsuscribe/unsuscribe.component';
 import { PaymentComponent } from './payment/payment.component';
 import { PaymentVisaComponent } from './payment-visa/payment-visa.component';
 import { MessagesComponent } from './messages/messages.component';
+import { WithdrawalComponent } from 'src/app/withdrawal/withdrawal.component';
 
 const routes: Routes = [
   {
@@ -19,6 +20,7 @@ const routes: Routes = [
       { path: 'payment', component: PaymentComponent },
       { path: 'visa', component: PaymentVisaComponent },
       { path: 'messages', component: MessagesComponent },
+      { path: 'withdrawal', component: WithdrawalComponent },
       // { path: 'select', redirectTo: 'select', pathMatch: 'full' },
     ],
   },
