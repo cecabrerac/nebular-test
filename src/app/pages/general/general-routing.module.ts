@@ -7,7 +7,7 @@ import { UnsuscribeComponent } from './unsuscribe/unsuscribe.component';
 import { PaymentComponent } from './payment/payment.component';
 import { PaymentVisaComponent } from './payment-visa/payment-visa.component';
 import { MessagesComponent } from './messages/messages.component';
-import { WithdrawalComponent } from 'src/app/withdrawal/withdrawal.component';
+import { WithdrawalComponent } from 'src/app/pages/general/withdrawal/withdrawal.component';
 
 const routes: Routes = [
   {

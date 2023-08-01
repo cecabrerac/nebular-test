@@ -35,7 +35,7 @@ import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { SwitchLangComponent } from './pages/general/switch-lang/switch-lang.component';
-import { WithdrawalComponent } from './withdrawal/withdrawal.component';
+import { WithdrawalComponent } from './pages/general/withdrawal/withdrawal.component';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(httpClient: HttpClient) {
