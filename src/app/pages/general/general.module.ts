@@ -21,6 +21,7 @@ import { PaymentComponent } from './payment/payment.component';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { ChartMultipleLineComponent } from './chart-multiple-line/chart-multiple-line.component';
 // import { SwitchLangComponent } from './switch-lang/switch-lang.component';
 
 // AoT requires an exported function for factories
@@ -29,7 +30,7 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
 }
 
 @NgModule({
-  declarations: [UnsuscribeComponent, PaymentComponent],
+  declarations: [UnsuscribeComponent, PaymentComponent, ChartMultipleLineComponent],
   imports: [
     CommonModule,
     GeneralRoutingModule,
