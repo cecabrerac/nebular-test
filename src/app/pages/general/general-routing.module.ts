@@ -8,6 +8,7 @@ import { PaymentComponent } from './payment/payment.component';
 import { PaymentVisaComponent } from './payment-visa/payment-visa.component';
 import { MessagesComponent } from './messages/messages.component';
 import { WithdrawalComponent } from 'src/app/pages/general/withdrawal/withdrawal.component';
+import { ChartMultipleLineComponent } from './chart-multiple-line/chart-multiple-line.component';
 
 const routes: Routes = [
   {
@@ -15,7 +16,8 @@ const routes: Routes = [
     component: GeneralComponent,
     children: [
       { path: 'select', component: SelectBoxComponent },
-      { path: 'graficas', component: GraficasComponent },
+      // { path: 'graficas', component: GraficasComponent },
+      { path: 'graficas', component: ChartMultipleLineComponent },
       { path: 'unsuscribe', component: UnsuscribeComponent },
       { path: 'payment', component: PaymentComponent },
       { path: 'visa', component: PaymentVisaComponent },
