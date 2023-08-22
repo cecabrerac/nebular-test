@@ -37,6 +37,13 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { SwitchLangComponent } from './pages/general/switch-lang/switch-lang.component';
 import { WithdrawalComponent } from './pages/general/withdrawal/withdrawal.component';
 
+//Login components
+import { HomeComponent } from './pages/general/authentication/components/home/home.component';
+import { HeaderComponent } from './pages/general/authentication/components/header/header.component';
+import { LoginComponent } from './pages/general/authentication/components/login/login.component';
+import { RegisterComponent } from './pages/general/authentication/components/register/register.component';
+import { LoginServiceService } from './pages/general/authentication/services/login-service/login-service.service';
+
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(httpClient: HttpClient) {
   return new TranslateHttpLoader(httpClient, './assets/i18n/', '.json');
@@ -53,6 +60,10 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     MessagesComponent,
     SwitchLangComponent,
     WithdrawalComponent,
+    HomeComponent,
+    HeaderComponent,
+    LoginComponent,
+    RegisterComponent,
   ],
   imports: [
     BrowserModule,
@@ -85,7 +96,7 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     }),
   ],
   exports: [FormsModule, ReactiveFormsModule],
-  providers: [],
+  providers: [LoginServiceService],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
