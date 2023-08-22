@@ -1,11 +1,14 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Subject } from 'rxjs';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root',
 })
 export class LoginServiceService {
+  readonly uri: string = environment.serverURL;
+
   headerOptions: any = null;
 
   _isLoggedIn: boolean = false;
@@ -22,7 +25,7 @@ export class LoginServiceService {
       });
     }
     return this._http.post(
-      'http://localhost:3000/login',
+      `${this.uri}/login`,
       { uname: userObj.uname, upass: userObj.upass },
       { observe: 'response', headers: this.headerOptions }
     );
@@ -30,7 +33,7 @@ export class LoginServiceService {
 
   setupAuth() {
     return this._http.post(
-      'http://localhost:3000/tfa/setup',
+      `${this.uri}/tfa/setup`,
       {},
       { observe: 'response' }
     );
@@ -38,7 +41,7 @@ export class LoginServiceService {
 
   registerUser(userObj: any) {
     return this._http.post(
-      'http://localhost:3000/register',
+      `${this.uri}/register`,
       { uname: userObj.uname, upass: userObj.upass },
       { observe: 'response' }
     );
@@ -63,20 +66,20 @@ export class LoginServiceService {
   }
 
   getAuth() {
-    return this._http.get('http://localhost:3000/tfa/setup', {
+    return this._http.get(`${this.uri}/tfa/setup`, {
       observe: 'response',
     });
   }
 
   deleteAuth() {
-    return this._http.delete('http://localhost:3000/tfa/setup', {
+    return this._http.delete(`${this.uri}/tfa/setup`, {
       observe: 'response',
     });
   }
 
   verifyAuth(token: any) {
     return this._http.post(
-      'http://localhost:3000/tfa/verify',
+      `${this.uri}/tfa/verify`,
       { token },
       { observe: 'response' }
     );

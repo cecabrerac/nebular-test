@@ -33,6 +33,8 @@ export class RegisterComponent implements OnInit {
       this._loginService.registerUser(this.userObject).subscribe((data) => {
         const result = data.body;
         if (result['status'] === 200) {
+          console.log(this.userObject.uname);
+          console.log(this.userObject.upass);
           this.errorMessage = result['message'];
           setTimeout(() => {
             this._router.navigate(['/login']);
