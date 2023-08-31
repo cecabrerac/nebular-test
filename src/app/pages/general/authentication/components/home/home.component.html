@@ -3,6 +3,15 @@
     <div *ngIf="this.tfa.secret">
 
       <h5 style="border-bottom: 1px solid #a8a8a8; padding-bottom: 5px;">Current Settings</h5>
+      <p>
+        <span>Device: {{device}}</span>
+        <br>
+        <span>OS: {{deviceInfo.os}}</span>
+        <br>
+        <span>OS Version: {{deviceInfo.os_version}}</span>
+        <br>
+        <span>Browser: {{deviceInfo.browser}}</span>
+      </p>
 
       <img [src]="tfa.dataURL" alt="" class="img-thumbnail" style="display:block;margin:auto">
 

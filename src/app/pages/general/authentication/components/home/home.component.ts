@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginServiceService } from '../../services/login-service/login-service.service';
+import { DeviceDetectorService } from 'ngx-device-detector';
 
 @Component({
   selector: 'app-home',
@@ -11,11 +12,24 @@ export class HomeComponent implements OnInit {
   authcode: string = '';
   errorMessage: string = null;
 
-  constructor(private _loginService: LoginServiceService) {
+  deviceInfo: any = {};
+  device: string = '';
+
+  constructor(
+    private _loginService: LoginServiceService,
+    private deviceService: DeviceDetectorService
+  ) {
     this.getAuthDetails();
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.deviceInfo = this.deviceService.getDeviceInfo();
+    if (this.deviceService.isMobile) this.device = 'Mobile';
+    if (this.deviceService.isTablet) this.device = 'Tablet';
+    if (this.deviceService.isDesktop) this.device = 'Desktop';
+
+    console.log('device info: ', this.deviceService.getDeviceInfo());
+  }
 
   getAuthDetails() {
     this._loginService.getAuth().subscribe((data) => {
