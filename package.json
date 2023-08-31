@@ -33,6 +33,7 @@
     "eva-icons": "^1.1.2",
     "jquery": "^3.6.3",
     "jsotp": "^1.0.4",
+    "ngx-device-detector": "^1.4.5",
     "rm": "^0.1.8",
     "rxjs": "~6.6.0",
     "socket.io-client": "^4.6.2",
