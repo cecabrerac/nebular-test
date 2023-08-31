@@ -24,9 +24,9 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     this.deviceInfo = this.deviceService.getDeviceInfo();
-    if (this.deviceService.isMobile) this.device = 'Mobile';
-    if (this.deviceService.isTablet) this.device = 'Tablet';
-    if (this.deviceService.isDesktop) this.device = 'Desktop';
+    if (this.deviceService.isMobile()) this.device = 'Mobile';
+    if (this.deviceService.isTablet()) this.device = 'Tablet';
+    if (this.deviceService.isDesktop()) this.device = 'Desktop';
 
     console.log('device info: ', this.deviceService.getDeviceInfo());
   }
